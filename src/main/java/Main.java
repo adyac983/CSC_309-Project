@@ -1,9 +1,20 @@
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+public class Main extends JFrame {
+    public Main() {
+        //add panels inside here
+
+    }
     //right now, code here is mainly for testing that the stuff works
     public static void main(String[] args) {
+        Main main = new Main();
+        main.setTitle("Towers of Hanoi");
+        main.setSize(800, 400);
+        main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        main.setVisible(true);
+
         List<DataRecord> dataRecords = WebDataExtractor.extractWebTableData();
 
         // Display the collected data
