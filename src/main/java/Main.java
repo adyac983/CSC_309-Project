@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-
+//right now, code here is mainly for testing that the stuff works
     public static void main(String[] args) {
         List<DataRecord> dataRecords = WebDataExtractor.extractWebTableData();
 

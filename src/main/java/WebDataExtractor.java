@@ -18,7 +18,7 @@ public class WebDataExtractor {
             System.out.println("Accessing " + URL + "...");
 
             Document source = Jsoup.connect(URL).get();
-            Element table = source.select("table").get(0); // Adjust the index based on the specific table you want to scrape
+            Element table = source.select("table").get(0);
             Elements rows = table.select("tr");
             if (rows.isEmpty()) {
                 System.out.println("No rows found in the table.");
