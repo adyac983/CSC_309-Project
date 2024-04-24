@@ -1,8 +1,9 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import javax.swing.JPanel;
 
-public class Player {
+public class Player extends JPanel{
     private Rectangle bounds; // dummy player, just a rectangle
     private int x;
     private int y;
@@ -13,8 +14,12 @@ public class Player {
         this.bounds = new Rectangle(x, y, width, height);
     }
 
-    public void draw(Graphics g) {
-        g.setColor(Color.CYAN);
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        // Draw the player
+        g.setColor(Color.PINK);
         g.fillRoundRect(bounds.x, bounds.y, bounds.width, bounds.height, 10, 10);
     }
 

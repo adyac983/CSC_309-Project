@@ -28,6 +28,12 @@ public class GameData extends PropertyChangeSupport {
         super(new Object());
         List<DataRecord> dataRecords = WebDataExtractor.extractWebTableData();
         buildings = BuildingParser.parseDataToBuildings(dataRecords);
+        // Display the parsed buildings
+//        System.out.println("Parsed Buildings:");
+//        for (int i = 0; i < buildings.size(); i++) {
+//            Building building = buildings.get(i);
+//            System.out.println("Building " + (i + 1) + ": Length=" + building.getLength() + ", Breadth=" + building.getBreadth());
+//        }
         numBuildings = buildings.size();
         this.recalculate();
     }
@@ -80,7 +86,7 @@ public class GameData extends PropertyChangeSupport {
 
     }
 
-    public List<Building> getBuildingst() {
+    public List<Building> getBuildings() {
         return buildings;
     }
 
@@ -103,6 +109,9 @@ public class GameData extends PropertyChangeSupport {
     }
     public void setCurrBuilding() {
         this.currBuilding += 1;
+    }
+    public Building getCurrBuilding() {
+        return buildings.get(currBuilding);
     }
 
     public void repaint() {
