@@ -23,23 +23,26 @@ public class BuildingPanel extends JPanel {
                 maxHeight = (int) building.getLength();
             }
         }
-        scaleFactor = 10000; // Adjust the 200 value as needed
+        scaleFactor = 1;
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+        super.paintComponent(g);
+        int x = 10;
+        int y = 10;
         for (Building building : buildings) {
-            // Calculate the width and height of the building based on the scale factor
+
             int width = (int) (building.getBreadth() * scaleFactor);
             int height = (int) (building.getLength() * scaleFactor);
             g.setColor(Color.BLUE);
-            g.fillRect(x, getHeight() - height - y, width * 10, height);
+            g.fillRect(x, getHeight() - height - 10, width * 10, height);
             g.setColor(Color.RED);
-            g.drawString("Building", x + 10, getHeight() - height - 10 - y);
-            g.drawString("Length: " + building.getLength(), x + 10, getHeight() - height - y);
-            g.drawString("Breadth: " + building.getBreadth(), x + 10, getHeight() - height + 20 - y);
+            g.drawString("Building", x + 10, getHeight() - height - 20);
+            g.drawString("Length: " + building.getLength(), x + 10, getHeight() - height);
+            g.drawString("Breadth: " + building.getBreadth(), x + 10, getHeight() - height + 20);
             x += width * 10 + 10; // Add a gap between buildings
         }
     }
@@ -48,8 +51,8 @@ public class BuildingPanel extends JPanel {
     public Dimension getPreferredSize() {
         int totalWidth = 0;
         for (Building building : buildings) {
-            totalWidth += (int) (building.getBreadth() * scaleFactor) * 10 + 10; // Add a gap between buildings
+            totalWidth += (int) (building.getBreadth() * scaleFactor) * 10 + 10;
         }
-        return new Dimension(totalWidth, maxHeight + 50); // Adjust the size as needed
+        return new Dimension(totalWidth, maxHeight + 50);
     }
 }
