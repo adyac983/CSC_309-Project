@@ -33,6 +33,7 @@ public class BuildingPanel extends JPanel {
         super.paintComponent(g);
         int x = 10;
         int y = 10;
+        int x1 = 1;
         for (Building building : buildings) {
 
             int width = (int) (building.getBreadth() * scaleFactor);
@@ -43,6 +44,11 @@ public class BuildingPanel extends JPanel {
             g.drawString("Building", x + 10, getHeight() - height - 20);
             g.drawString("Length: " + building.getLength(), x + 10, getHeight() - height);
             g.drawString("Breadth: " + building.getBreadth(), x + 10, getHeight() - height + 20);
+            if (x1<9){
+                String equation = Equations.getEquation(x1);
+                g.drawString(equation,  x + 10, getHeight() - height + 40);
+            }
+            x1++;
             x += width * 10 + 10; // Add a gap between buildings
         }
     }
