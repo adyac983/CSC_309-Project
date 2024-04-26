@@ -36,14 +36,11 @@ public class Main {
         frame.add(scrollPane, BorderLayout.CENTER);
         frame.setVisible(true);
 
-        // Feedback button
-        JButton feedbackButton = new JButton("Feedback");
-        feedbackButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                Feedback.showDialog(frame);
-            }
-        });
-        frame.add(feedbackButton, BorderLayout.SOUTH);
+        // Feedback panel
+        JPanel feedbackPanel = new JPanel(new BorderLayout());
+        Feedback feedback = new Feedback();
+        feedbackPanel.add(feedback, BorderLayout.SOUTH);
+        frame.add(feedbackPanel, BorderLayout.SOUTH);
 
         frame.setVisible(true);
 

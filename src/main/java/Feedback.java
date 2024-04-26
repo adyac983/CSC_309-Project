@@ -3,44 +3,48 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Feedback extends JDialog {
-    private JTextArea feedbackTextArea;
+public class Feedback extends JPanel {
+    private JTextField answerField;
+    private JLabel equationLabel;
+    private int currentEquation = 1;
 
-    public Feedback(JFrame parent) {
-        super(parent, "Feedback", true);
-        setLayout(new BorderLayout());
+    public Feedback() {
+        setLayout(new FlowLayout());
 
-        JLabel label = new JLabel("Please provide your feedback:");
-        add(label, BorderLayout.NORTH);
+        equationLabel = new JLabel("Equation: " + Equations.getEquation(currentEquation));
+        add(equationLabel);
 
-        feedbackTextArea = new JTextArea(10, 30);
-        feedbackTextArea.setLineWrap(true);
-        JScrollPane scrollPane = new JScrollPane(feedbackTextArea);
-        add(scrollPane, BorderLayout.CENTER);
+        JLabel answerTextLabel = new JLabel("Your Answer:");
+        answerField = new JTextField(10);
+        add(answerTextLabel);
+        add(answerField);
 
         JButton submitButton = new JButton("Submit");
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                submitFeedback();
+                checkAnswer();
             }
         });
-        add(submitButton, BorderLayout.SOUTH);
-
-        setSize(400, 300);
-        setLocationRelativeTo(parent);
+        add(submitButton);
     }
 
-    private void submitFeedback() {
-        String feedback = feedbackTextArea.getText();
-        //for now just print it
-        System.out.println("Feedback submitted: " + feedback);
-        JOptionPane.showMessageDialog(this, "Thank you for your feedback!");
-        dispose();
-    }
-
-    public static void showDialog(JFrame parent) {
-        Feedback feedbackDialog = new Feedback(parent);
-        feedbackDialog.setVisible(true);
+    private void checkAnswer() {
+        try {
+            double userAnswer = Double.parseDouble(answerField.getText());
+            double correctAnswer = Equations.equationAnswers(currentEquation);
+            if (Math.abs(userAnswer - correctAnswer) < 0.0001) {
+                JOptionPane.showMessageDialog(this, "Correct!");
+            } else {
+                JOptionPane.showMessageDialog(this, "Incorrect! The correct answer is: " + correctAnswer);
+            }
+            currentEquation++;
+            if (currentEquation > 8)
+                currentEquation = 1;
+            equationLabel.setText("Equation: " + Equations.getEquation(currentEquation));
+            answerField.setText("");
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid number.");
+        }
     }
 }
