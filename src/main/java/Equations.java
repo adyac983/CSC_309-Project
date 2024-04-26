@@ -45,7 +45,7 @@ public class Equations {
 
             case 5:
                 // Equation 5: (2x + 1)/3 = 4
-                return (4 * 3) - 1 / 2.0;
+                return ((4 * 3) - 1)/ 2.0;
 
             case 6:
                 // Equation 6: 3x^3 + 5x^2 - 2x + 1 = 0
