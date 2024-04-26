@@ -1,0 +1,112 @@
+Index: src/main/java/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import javax.swing.*;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\nimport javax.swing.*;\r\nimport javax.swing.table.DefaultTableModel;\r\nimport java.awt.*;\r\n\r\n//public class Main extends JFrame {\r\n//    public Main() {\r\n//        //add panels inside here\r\n//        JPanel mainPanel = new JPanel();\r\n//        mainPanel.setLayout(null);\r\n//        GameData.getInstance().setSize(this.getWidth(), this.getHeight());\r\n//        Building firstBuilding = GameData.getInstance().getCurrBuilding();\r\n//\r\n//        BuildingPanel buildingPanel = new BuildingPanel(GameData.getInstance().getBuildings());\r\n//        Player player = new Player(firstBuilding.getX(),firstBuilding.getY(),10,30);\r\n//\r\n//        mainPanel.add(buildingPanel);\r\n//        mainPanel.add(player);\r\n//        //GameData.getInstance().addPropertyChangeListener();\r\n//    }\r\n//\r\n//    //right now, code here is mainly for testing that the stuff works\r\n//    public static void main(String[] args) {\r\n//        Main main = new Main();\r\n//        main.setTitle(\"Building data\");\r\n//        main.setSize(800, 400);\r\n//        main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n//        main.setVisible(true);\r\n//\r\n//    }\r\n//}\r\n\r\n\r\npublic class Main {\r\n    //right now, code here is mainly for testing that the stuff works\r\n    public static void main(String[] args) {\r\n        List<DataRecord> dataRecords = WebDataExtractor.extractWebTableData();\r\n\r\n        // Display the collected data\r\n        System.out.println(\"Collected Data:\");\r\n        for (DataRecord record : dataRecords) {\r\n            System.out.println(record.getHeader() + \") \" + record.getCountry() + \" : \" + record.getNum());\r\n        }\r\n\r\n        List<Building> buildings = BuildingParser.parseDataToBuildings(dataRecords);\r\n\r\n\r\n        // Display the parsed buildings\r\n        System.out.println(\"Parsed Buildings:\");\r\n        for (int i = 0; i < buildings.size(); i++) {\r\n            Building building = buildings.get(i);\r\n            System.out.println(\"Building \" + (i + 1) + \": Length=\" + building.getLength() + \", Breadth=\" + building.getBreadth());\r\n        }\r\n\r\n        JFrame frame = new JFrame(\"Building Data\");\r\n        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n        frame.setSize(400, 300);\r\n\r\n        BuildingPanel buildingPanel = new BuildingPanel(buildings);\r\n        buildingPanel.calculateDimensions(); // Call calculateDimensions to calculate panel dimensions\r\n        JScrollPane scrollPane = new JScrollPane(buildingPanel);\r\n        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);\r\n        GameData.getInstance().setSize(400,300);\r\n        Building firstBuilding = GameData.getInstance().getCurrBuilding();\r\n        Player player = new Player(firstBuilding.getX(),0,50,100);\r\n        player.setBounds(player.getX(), player.getY(), player.getBounds().width, player.getBounds().height);\r\n        frame.add(player);\r\n\r\n        frame.add(scrollPane, BorderLayout.CENTER);\r\n        frame.setVisible(true);\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n}\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Main.java b/src/main/java/Main.java
+--- a/src/main/java/Main.java	
++++ b/src/main/java/Main.java	
+@@ -5,33 +5,6 @@
+ import javax.swing.table.DefaultTableModel;
+ import java.awt.*;
+ 
+-//public class Main extends JFrame {
+-//    public Main() {
+-//        //add panels inside here
+-//        JPanel mainPanel = new JPanel();
+-//        mainPanel.setLayout(null);
+-//        GameData.getInstance().setSize(this.getWidth(), this.getHeight());
+-//        Building firstBuilding = GameData.getInstance().getCurrBuilding();
+-//
+-//        BuildingPanel buildingPanel = new BuildingPanel(GameData.getInstance().getBuildings());
+-//        Player player = new Player(firstBuilding.getX(),firstBuilding.getY(),10,30);
+-//
+-//        mainPanel.add(buildingPanel);
+-//        mainPanel.add(player);
+-//        //GameData.getInstance().addPropertyChangeListener();
+-//    }
+-//
+-//    //right now, code here is mainly for testing that the stuff works
+-//    public static void main(String[] args) {
+-//        Main main = new Main();
+-//        main.setTitle("Building data");
+-//        main.setSize(800, 400);
+-//        main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+-//        main.setVisible(true);
+-//
+-//    }
+-//}
+-
+ 
+ public class Main {
+     //right now, code here is mainly for testing that the stuff works
+@@ -64,10 +37,10 @@
+         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+         GameData.getInstance().setSize(400,300);
+         Building firstBuilding = GameData.getInstance().getCurrBuilding();
+-        Player player = new Player(firstBuilding.getX(),0,50,100);
++        Player player = new Player(firstBuilding.getX(), 0,50,100);
+         player.setBounds(player.getX(), player.getY(), player.getBounds().width, player.getBounds().height);
+         frame.add(player);
+-
++        System.out.println(player.getX());
+         frame.add(scrollPane, BorderLayout.CENTER);
+         frame.setVisible(true);
+ 
+Index: src/main/java/Player.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.awt.Color;\r\nimport java.awt.Graphics;\r\nimport java.awt.Rectangle;\r\nimport javax.swing.JPanel;\r\n\r\npublic class Player extends JPanel{\r\n    private Rectangle bounds; // dummy player, just a rectangle\r\n    private int x;\r\n    private int y;\r\n\r\n    public Player(int x, int y, int width, int height) {\r\n        this.x = x;\r\n        this. y = y;\r\n        this.bounds = new Rectangle(x, y, width, height);\r\n    }\r\n\r\n    @Override\r\n    protected void paintComponent(Graphics g) {\r\n        super.paintComponent(g);\r\n\r\n        // Draw the player\r\n        g.setColor(Color.PINK);\r\n        g.fillRoundRect(bounds.x, bounds.y, bounds.width, bounds.height, 10, 10);\r\n    }\r\n\r\n    public boolean contains(int x, int y) {\r\n        return bounds.contains(x, y);\r\n    }\r\n\r\n    public int getX() {\r\n        return this.x;\r\n    }\r\n    public int getY() {\r\n        return this.y;\r\n    }\r\n    public void moveTo(int x, int y) {\r\n        bounds.setLocation(x, y);\r\n    } // ideally can get the next building's x and y and move to there\r\n\r\n    public Rectangle getBounds() {\r\n        return bounds;\r\n    }\r\n}
+===================================================================
+diff --git a/src/main/java/Player.java b/src/main/java/Player.java
+--- a/src/main/java/Player.java	
++++ b/src/main/java/Player.java	
+@@ -20,7 +20,7 @@
+ 
+         // Draw the player
+         g.setColor(Color.PINK);
+-        g.fillRoundRect(bounds.x, bounds.y, bounds.width, bounds.height, 10, 10);
++        g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+     }
+ 
+     public boolean contains(int x, int y) {
+Index: src/main/java/BuildingPanel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.awt.Color;\r\nimport java.awt.Dimension;\r\nimport java.awt.Graphics;\r\nimport java.util.List;\r\nimport javax.swing.JPanel;\r\n\r\npublic class BuildingPanel extends JPanel {\r\n    private List <Building> buildings;\r\n    private int x = 10;\r\n    private int y = 10;\r\n    private int maxHeight;\r\n    private double scaleFactor;\r\n\r\n    public BuildingPanel(List <Building> buildings) {\r\n        this.buildings = buildings;\r\n        calculateDimensions();\r\n    }\r\n\r\n    void calculateDimensions() {\r\n        maxHeight = 0;\r\n        for (Building building : buildings) {\r\n            if (building.getLength() > maxHeight) {\r\n                maxHeight = (int) building.getLength();\r\n            }\r\n        }\r\n        scaleFactor = 1;\r\n    }\r\n\r\n    @Override\r\n    protected void paintComponent(Graphics g) {\r\n        super.paintComponent(g);\r\n\r\n        super.paintComponent(g);\r\n        int x = 10;\r\n        int y = 10;\r\n        for (Building building : buildings) {\r\n\r\n            int width = (int) (building.getBreadth() * scaleFactor);\r\n            int height = (int) (building.getLength() * scaleFactor);\r\n            g.setColor(Color.BLUE);\r\n            g.fillRect(x, getHeight() - height - 10, width * 10, height);\r\n            g.setColor(Color.RED);\r\n            g.drawString(\"Building\", x + 10, getHeight() - height - 20);\r\n            g.drawString(\"Length: \" + building.getLength(), x + 10, getHeight() - height);\r\n            g.drawString(\"Breadth: \" + building.getBreadth(), x + 10, getHeight() - height + 20);\r\n            x += width * 10 + 10; // Add a gap between buildings\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public Dimension getPreferredSize() {\r\n        int totalWidth = 0;\r\n        for (Building building : buildings) {\r\n            totalWidth += (int) (building.getBreadth() * scaleFactor) * 10 + 10;\r\n        }\r\n        return new Dimension(totalWidth, maxHeight + 50);\r\n    }\r\n}
+===================================================================
+diff --git a/src/main/java/BuildingPanel.java b/src/main/java/BuildingPanel.java
+--- a/src/main/java/BuildingPanel.java	
++++ b/src/main/java/BuildingPanel.java	
+@@ -37,6 +37,8 @@
+ 
+             int width = (int) (building.getBreadth() * scaleFactor);
+             int height = (int) (building.getLength() * scaleFactor);
++            building.setBreadth(width);
++            building.setLength(height);
+             g.setColor(Color.BLUE);
+             g.fillRect(x, getHeight() - height - 10, width * 10, height);
+             g.setColor(Color.RED);
+Index: src/main/java/GameData.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.awt.*;\r\nimport java.beans.PropertyChangeSupport;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\nimport java.util.Random;\r\n\r\n/**\r\n * Game data for the Towers of Hanoi game.\r\n * It contains the disks and towers, and recalculate their positions.\r\n * It extends PropertyChangeSupport to notify observers of changes in the game data.\r\n *\r\n * @author Professor\r\n */\r\npublic class GameData extends PropertyChangeSupport {\r\n\r\n    private static GameData instance;\r\n\r\n    private int windowsWidth;\r\n    private int windowHeight;\r\n    private List<Building> buildings;\r\n    private int mouseYOffset = 0;\r\n\r\n    private int currBuilding = 0;\r\n\r\n    private int numBuildings = 0;\r\n\r\n    private GameData() {\r\n        super(new Object());\r\n        List<DataRecord> dataRecords = WebDataExtractor.extractWebTableData();\r\n        buildings = BuildingParser.parseDataToBuildings(dataRecords);\r\n        // Display the parsed buildings\r\n//        System.out.println(\"Parsed Buildings:\");\r\n//        for (int i = 0; i < buildings.size(); i++) {\r\n//            Building building = buildings.get(i);\r\n//            System.out.println(\"Building \" + (i + 1) + \": Length=\" + building.getLength() + \", Breadth=\" + building.getBreadth());\r\n//        }\r\n        numBuildings = buildings.size();\r\n        this.recalculate();\r\n    }\r\n\r\n    public void recalculate () {\r\n        if (windowsWidth == 0 || windowHeight == 0) {\r\n            return;\r\n        }\r\n        double totalBreadth = 0;\r\n        int maxHeight = 0;\r\n        for (Building building : buildings) {\r\n            totalBreadth += building.getBreadth();\r\n            if (building.getLength() > maxHeight) {\r\n                maxHeight = (int) building.getLength();\r\n            }\r\n        }\r\n\r\n        // Calculate the scale factor to fit all buildings within the frame\r\n        double scaleFactor = 2000 / totalBreadth;\r\n\r\n        int finalMaxHeight = maxHeight;\r\n        int x = 10; // Starting x-coordinate for the first building\r\n        int y = 10; // Starting y-coordinate for all buildings\r\n\r\n        for (int i = currBuilding; i < numBuildings; i++) {\r\n            // Calculate the width and height of the building based on the scale factor\r\n            Building building = buildings.get(i);\r\n            int width = (int) (building.getBreadth() * scaleFactor);\r\n            int height = (int) (building.getLength() * scaleFactor);\r\n\r\n            building.setX(x);\r\n            building.setY(y);\r\n\r\n            x += width * 10 + 10; // Add a gap between buildings\r\n        }\r\n\r\n    }\r\n\r\n    public static GameData getInstance() {\r\n        if (instance == null) {\r\n            instance = new GameData();\r\n        }\r\n        return instance;\r\n    }\r\n\r\n    public void setSize(int windowWidth, int windowHeight) {\r\n        this.windowsWidth = windowWidth;\r\n        this.windowHeight = windowHeight;\r\n        this.recalculate();\r\n\r\n    }\r\n\r\n    public List<Building> getBuildings() {\r\n        return buildings;\r\n    }\r\n\r\n    public int getMouseXOffset() {\r\n        return mouseXOffset;\r\n    }\r\n\r\n    public void setMouseXOffset(int mouseXOffset) {\r\n        this.mouseXOffset = mouseXOffset;\r\n    }\r\n\r\n    private int mouseXOffset = 0;\r\n\r\n    public int getMouseYOffset() {\r\n        return mouseYOffset;\r\n    }\r\n\r\n    public void setMouseYOffset(int mouseYOffset) {\r\n        this.mouseYOffset = mouseYOffset;\r\n    }\r\n    public void setCurrBuilding() {\r\n        this.currBuilding += 1;\r\n    }\r\n    public Building getCurrBuilding() {\r\n        return buildings.get(currBuilding);\r\n    }\r\n\r\n    public void repaint() {\r\n        firePropertyChange(\"repaint\", null, null);\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/GameData.java b/src/main/java/GameData.java
+--- a/src/main/java/GameData.java	
++++ b/src/main/java/GameData.java	
+@@ -28,12 +28,6 @@
+         super(new Object());
+         List<DataRecord> dataRecords = WebDataExtractor.extractWebTableData();
+         buildings = BuildingParser.parseDataToBuildings(dataRecords);
+-        // Display the parsed buildings
+-//        System.out.println("Parsed Buildings:");
+-//        for (int i = 0; i < buildings.size(); i++) {
+-//            Building building = buildings.get(i);
+-//            System.out.println("Building " + (i + 1) + ": Length=" + building.getLength() + ", Breadth=" + building.getBreadth());
+-//        }
+         numBuildings = buildings.size();
+         this.recalculate();
+     }
