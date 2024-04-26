@@ -31,8 +31,8 @@ public class BuildingPanel extends JPanel {
         super.paintComponent(g);
 
         super.paintComponent(g);
-        int x = 10;
-        int y = 10;
+        int x = 20;
+        int y = 20;
         int x1 = 1;
         for (Building building : buildings) {
 

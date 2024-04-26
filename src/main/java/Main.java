@@ -3,7 +3,8 @@ import java.util.List;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 public class Main {
     //right now, code here is mainly for testing that the stuff works
     public static void main(String[] args) {
@@ -30,11 +31,20 @@ public class Main {
         frame.setSize(400, 300);
 
         BuildingPanel buildingPanel = new BuildingPanel(buildings);
-        buildingPanel.calculateDimensions(); // Call calculateDimensions to calculate panel dimensions
         JScrollPane scrollPane = new JScrollPane(buildingPanel);
-        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
         frame.add(scrollPane, BorderLayout.CENTER);
+        frame.setVisible(true);
+
+        // Feedback button
+        JButton feedbackButton = new JButton("Feedback");
+        feedbackButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Feedback.showDialog(frame);
+            }
+        });
+        frame.add(feedbackButton, BorderLayout.SOUTH);
+
         frame.setVisible(true);
 
 
