@@ -42,6 +42,11 @@ public class Main {
         feedbackPanel.add(feedback, BorderLayout.SOUTH);
         frame.add(feedbackPanel, BorderLayout.SOUTH);
 
+        Building firstBuilding = GameData.getInstance().getCurrBuilding();
+        Player player = new Player(firstBuilding.getX(),0,50,100);
+        player.setBounds(player.getX(), player.getY(), player.getBounds().width, player.getBounds().height);
+        frame.add(player);
+
         frame.setVisible(true);
 
 
