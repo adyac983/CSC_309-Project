@@ -38,7 +38,7 @@ public class BuildingPanel extends JPanel {
 
             int width = (int) (building.getBreadth() * scaleFactor);
             int height = (int) (building.getLength() * scaleFactor);
-            g.setColor(Color.BLUE);
+            g.setColor(Color.YELLOW);
             g.fillRect(x, getHeight() - height - 10, width * 10, height);
             g.setColor(Color.RED);
             g.drawString("Building", x + 10, getHeight() - height - 20);
