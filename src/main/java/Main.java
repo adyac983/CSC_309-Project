@@ -40,21 +40,13 @@ public class Main {
         frame.add(player);
         frame.add(scrollPane, BorderLayout.CENTER);
 
-
         // Feedback panel
         JPanel feedbackPanel = new JPanel(new BorderLayout());
         Feedback feedback = new Feedback();
         feedbackPanel.add(feedback, BorderLayout.SOUTH);
         frame.add(feedbackPanel, BorderLayout.SOUTH);
-
-
         frame.setVisible(true);
-
     }
-
-
-
-
 }
 
 
