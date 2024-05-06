@@ -32,7 +32,7 @@ public class Feedback extends JPanel {
     private void checkAnswer() {
         try {
             double userAnswer = Double.parseDouble(answerField.getText());
-            double correctAnswer = Equations.equationAnswers(currentEquation);
+            double correctAnswer = Equations.getAnswer(currentEquation);
             if (Math.abs(userAnswer - correctAnswer) < 0.0001) {
                 JOptionPane.showMessageDialog(this, "Correct!");
             } else {

@@ -1,68 +1,82 @@
+import java.text.DecimalFormat;
+import java.util.HashMap;
+import java.util.Random;
+
 public class Equations {
-    public static String getEquation(int number) {
-        switch (number) {
-            case 1:
-                return "3x + 5 = 11";
-            case 2:
-                return "2x^2 - 7x + 3 = 0";
-            case 3:
-                return "x/4 + 2 = 5";
-            case 4:
-                return "5x - 8 = 22";
-            case 5:
-                return "(2x + 1)/3 = 4";
-            case 6:
-                return "3x^3 + 5x^2 - 2x + 1 = 0";
-            case 7:
-                return "x^2/9 = 16";
-            case 8:
-                return "sqrt(x) + 7 = 11";
-            default:
-                return "No equation found for " + number;
+    private static final Random random = new Random();
+    private static final DecimalFormat df = new DecimalFormat("#.00"); // Pattern for always two decimal places
+    private static final HashMap<Integer, String> equationsMap = new HashMap<>();
+
+    static {
+        // Populate the equations map with equationNumber and corresponding equation
+        for (int i = 1; i <= 131; i++) {
+            equationsMap.put(i, generateRandomEquation());
         }
     }
 
-    public static double equationAnswers(int equationNumber) {
-        switch (equationNumber) {
-            case 1:
-                // Equation 1: 3x + 5 = 11
-                return (11 - 5) / 3.0;
+    public static String getEquation(int equationNumber) {
+        return equationsMap.getOrDefault(equationNumber, "No equation found for " + equationNumber);
+    }
 
-            case 2:
-                // Equation 2: 2x^2 - 7x + 3 = 0
-                double a = 2, b = -7, c = 3;
-                double discriminant = b * b - 4 * a * c;
-                double x2_1 = (-b + Math.sqrt(discriminant)) / (2 * a);
-                return x2_1; // Returning only one solution for simplicity
-
-            case 3:
-                // Equation 3: x/4 + 2 = 5
-                return (5 - 2) * 4;
-
-            case 4:
-                // Equation 4: 5x - 8 = 22
-                return (22 + 8) / 5.0;
-
-            case 5:
-                // Equation 5: (2x + 1)/3 = 4
-                return ((4 * 3) - 1)/ 2.0;
-
-            case 6:
-                // Equation 6: 3x^3 + 5x^2 - 2x + 1 = 0
-                return SolveEquations.solveCubicEquation(3, 5, -2, 1);
-
-            case 7:
-                // Equation 7: x^2/9 = 16
-                double x7_1 = Math.sqrt(16 * 9);
-                return x7_1; // Returning only the positive solution
-
-            case 8:
-                // Equation 8: sqrt(x) + 7 = 11
-                return (11 - 7) * (11 - 7);
-
-            default:
-                throw new IllegalArgumentException("Invalid equation number: " + equationNumber);
+    public static double getAnswer(int equationNumber) {
+        String equation = equationsMap.getOrDefault(equationNumber, "No equation found for " + equationNumber);
+        if (equation.contains("x^2")) {
+            return solveQuadraticEquation(equation);
+        } else if (equation.contains("x")) {
+            return solveLinearEquation(equation);
+        } else {
+            throw new IllegalArgumentException("Unsupported equation type: " + equation);
         }
     }
+
+    private static String generateRandomEquation() {
+        int equationType = random.nextInt(2); // 0 for linear, 1 for quadratic
+        return equationType == 0 ? generateLinearEquation() : generateQuadraticEquation();
+    }
+
+    private static String generateLinearEquation() {
+        int coefX = random.nextInt(10) + 1; // Random coefficient for x (1 to 10)
+        int constant = random.nextInt(20) - 10; // Random constant (-10 to 10)
+        return coefX + "x + " + constant + " = 0";
+    }
+
+    private static String generateQuadraticEquation() {
+        int a = random.nextInt(5) + 1; // Random coefficient for x^2 (1 to 5)
+        int b = random.nextInt(10) - 5; // Random coefficient for x (-5 to 5)
+        int c = random.nextInt(10) - 5; // Random constant (-5 to 5)
+        return a + "x^2 + " + b + "x + " + c + " = 0";
+    }
+
+    private static double solveLinearEquation(String equation) {
+        String[] parts = equation.split(" ");
+        double coefX = Double.parseDouble(parts[0].replace("x", ""));
+        double constant = Double.parseDouble(parts[2]);
+        return Double.parseDouble(df.format(-constant / coefX)); // Round off to always two decimal places
+    }
+
+    private static double solveQuadraticEquation(String equation) {
+        String[] parts = equation.split(" ");
+        double a = Double.parseDouble(parts[0].replace("x^2", ""));
+        double b = Double.parseDouble(parts[2].replace("x", ""));
+        double c = Double.parseDouble(parts[4]);
+
+        double discriminant = b * b - 4 * a * c;
+        if (discriminant >= 0) {
+            double root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+            double root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+            return Double.parseDouble(df.format(Math.max(root1, root2))); // Round off to always two decimal places
+        } else {
+            throw new IllegalArgumentException("No real roots for the quadratic equation.");
+        }
+    }
+
+   /* public static void main(String[] args) {
+        int equationNumber = random.nextInt(131) + 1; // Random equation number from 1 to 131
+
+        String equation = Equations.getEquation(equationNumber);
+        System.out.println("Equation " + equationNumber + ": " + equation);
+
+        double answer = Equations.getAnswer(equationNumber);
+        System.out.println("Solution: " + answer);
+    }*/
 }
-

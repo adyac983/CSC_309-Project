@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d85d31d-1cdf-4bae-9393-16bf61ecbb8b" name="Changes" comment="code with player">
+    <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="Equations added">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_26_2024_12_19_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_26_2024_12_19_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BuildingPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BuildingPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Equations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Equations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Feedback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SolveEquations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SolveEquations.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,132 +28,124 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="2fYnJQIP49J2Ekp3pBncr7oUeUG" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2fU8bbS3nfOr9MSPFTXSUURzTGM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Equations.executor": "Run",
+    "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "project.structure.last.edited": "Project",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5d85d31d-1cdf-4bae-9393-16bf61ecbb8b" name="Changes" comment="" />
-      <created>1713986811891</created>
+      <changelist id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="" />
+      <created>1713844369247</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1713986811891</updated>
+      <updated>1713844369247</updated>
+      <workItem from="1713844370583" duration="1721000" />
+      <workItem from="1713926641786" duration="603000" />
+      <workItem from="1713932477055" duration="17000" />
+      <workItem from="1713987806102" duration="375000" />
+      <workItem from="1714084219065" duration="2945000" />
+      <workItem from="1714160825011" duration="4936000" />
+      <workItem from="1714433664060" duration="18000" />
+      <workItem from="1714971242244" duration="268000" />
+      <workItem from="1714971511430" duration="4333000" />
     </task>
-    <task id="LOCAL-00001" summary="player class&#10;constructor in main&#10;empty jframe">
-      <created>1713989505694</created>
+    <task id="LOCAL-00001" summary="data extraction and parsing done">
+      <option name="closed" value="true" />
+      <created>1713988117791</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1713989505694</updated>
+      <updated>1713988117791</updated>
     </task>
-    <task id="LOCAL-00002" summary="player class&#10;constructor in main&#10;empty jframe&#10;building x and y setter&#10;gamedata repository">
-      <created>1713999337518</created>
+    <task id="LOCAL-00002" summary="Equations added">
+      <option name="closed" value="true" />
+      <created>1714086061099</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1713999337518</updated>
+      <updated>1714086061099</updated>
     </task>
-    <task id="LOCAL-00003" summary="player class&#10;constructor in main&#10;empty jframe&#10;building x and y setter&#10;gamedata repository">
-      <created>1713999674919</created>
+    <task id="LOCAL-00003" summary="Equations added">
+      <option name="closed" value="true" />
+      <created>1714086576301</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1713999674919</updated>
+      <updated>1714086576301</updated>
     </task>
-    <task id="LOCAL-00004" summary="code with player">
-      <created>1714001729245</created>
+    <task id="LOCAL-00004" summary="Equations added">
+      <option name="closed" value="true" />
+      <created>1714161758841</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1714001729245</updated>
+      <updated>1714161758841</updated>
     </task>
-    <task id="LOCAL-00005" summary="code with player">
-      <created>1714002820408</created>
+    <task id="LOCAL-00005" summary="Equations added">
+      <option name="closed" value="true" />
+      <created>1714971335389</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1714002820408</updated>
+      <updated>1714971335389</updated>
     </task>
-    <task id="LOCAL-00006" summary="code with player">
-      <created>1714159559358</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1714159559358</updated>
-    </task>
-    <task id="LOCAL-00007" summary="code with player">
-      <created>1714164048137</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1714164048137</updated>
-    </task>
-    <task id="LOCAL-00008" summary="code with player">
-      <created>1714164283521</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1714164283521</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="main" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="player class&#10;constructor in main&#10;empty jframe" />
-    <MESSAGE value="player class&#10;constructor in main&#10;empty jframe&#10;building x and y setter&#10;gamedata repository" />
-    <MESSAGE value="code with player" />
-    <option name="LAST_COMMIT_MESSAGE" value="code with player" />
+    <MESSAGE value="data extraction and parsing done" />
+    <MESSAGE value="Equations added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Equations added" />
   </component>
 </project>
