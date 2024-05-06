@@ -69,6 +69,9 @@ public class Equations {
             throw new IllegalArgumentException("No real roots for the quadratic equation.");
         }
     }
+    public HashMap<Integer, String> getEquationMap(){
+        return equationsMap;
+    }
 
    /* public static void main(String[] args) {
         int equationNumber = random.nextInt(131) + 1; // Random equation number from 1 to 131

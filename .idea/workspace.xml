@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="code with player">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BuildingPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BuildingPanel.class" afterDir="false" />
-    </list>
+    <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="Equations getter added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,7 +74,8 @@
       <workItem from="1714160825011" duration="4936000" />
       <workItem from="1714433664060" duration="18000" />
       <workItem from="1714971242244" duration="268000" />
-      <workItem from="1714971511430" duration="4333000" />
+      <workItem from="1714971511430" duration="5037000" />
+      <workItem from="1715038627222" duration="679000" />
     </task>
     <task id="LOCAL-00001" summary="data extraction and parsing done">
       <option name="closed" value="true" />
@@ -119,7 +117,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714971335389</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Equations added to all buildings">
+      <option name="closed" value="true" />
+      <created>1714976064558</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714976064558</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Equations getter added">
+      <option name="closed" value="true" />
+      <created>1715039165154</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715039165154</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +153,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="data extraction and parsing done" />
     <MESSAGE value="Equations added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Equations added" />
+    <MESSAGE value="Equations added to all buildings" />
+    <MESSAGE value="Equations getter added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Equations getter added" />
   </component>
 </project>
