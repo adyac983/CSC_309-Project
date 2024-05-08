@@ -11,7 +11,7 @@ public class BuildingParser {
             double number = Double.parseDouble(record.getNum());
 
             double length = number * 5.0;
-            int breadth = 15;
+            int breadth = 150;
 
             buildings.add(new Building(length, breadth));
         }

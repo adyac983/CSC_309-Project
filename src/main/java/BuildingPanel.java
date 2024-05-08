@@ -6,10 +6,7 @@ import javax.swing.JPanel;
 
 public class BuildingPanel extends JPanel {
     private List <Building> buildings;
-    private int x = 10;
-    private int y = 10;
     private int maxHeight;
-    private double scaleFactor;
 
     public BuildingPanel(List <Building> buildings) {
         this.buildings = buildings;
@@ -23,7 +20,6 @@ public class BuildingPanel extends JPanel {
                 maxHeight = (int) building.getLength();
             }
         }
-        scaleFactor = 1;
     }
 
     @Override
@@ -36,10 +32,10 @@ public class BuildingPanel extends JPanel {
         int x1 = 1;
         for (Building building : buildings) {
 
-            int width = (int) (building.getBreadth() * scaleFactor);
-            int height = (int) (building.getLength() * scaleFactor);
+            int width = building.getBreadth();
+            int height = (int) building.getLength();
             g.setColor(Color.YELLOW);
-            g.fillRect(x, getHeight() - height - 10, width * 10, height);
+            g.fillRect(x, getHeight() - height - 10, width, height);
             g.setColor(Color.RED);
             g.drawString("Building", x + 10, getHeight() - height - 20);
             g.drawString("Length: " + building.getLength(), x + 10, getHeight() - height);
@@ -49,7 +45,7 @@ public class BuildingPanel extends JPanel {
                 g.drawString(equation,  x + 10, getHeight() - height + 40);
             }
             x1++;
-            x += width * 10 + 10; // Add a gap between buildings
+            x += width + 10; // Add a gap between buildings
         }
     }
 
@@ -57,7 +53,7 @@ public class BuildingPanel extends JPanel {
     public Dimension getPreferredSize() {
         int totalWidth = 0;
         for (Building building : buildings) {
-            totalWidth += (int) (building.getBreadth() * scaleFactor) * 10 + 10;
+            totalWidth += building.getBreadth() + 10;
         }
         return new Dimension(totalWidth, maxHeight + 50);
     }
