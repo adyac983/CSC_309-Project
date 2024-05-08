@@ -14,10 +14,9 @@ import java.util.Random;
 public class GameData extends PropertyChangeSupport {
 
     private static GameData instance;
-
-    private int windowsWidth;
-    private int windowHeight;
     private List<Building> buildings;
+    private Player player;
+
     private int mouseYOffset = 0;
 
     private int currBuilding = 0;
@@ -37,11 +36,11 @@ public class GameData extends PropertyChangeSupport {
         numBuildings = buildings.size();
         this.recalculate();
     }
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
 
     public void recalculate () {
-        if (windowsWidth == 0 || windowHeight == 0) {
-            return;
-        }
         double totalBreadth = 0;
         int maxHeight = 0;
         for (Building building : buildings) {
@@ -77,13 +76,6 @@ public class GameData extends PropertyChangeSupport {
             instance = new GameData();
         }
         return instance;
-    }
-
-    public void setSize(int windowWidth, int windowHeight) {
-        this.windowsWidth = windowWidth;
-        this.windowHeight = windowHeight;
-        this.recalculate();
-
     }
 
     public List<Building> getBuildings() {

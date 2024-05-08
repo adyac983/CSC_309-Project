@@ -33,10 +33,9 @@ public class Main {
         BuildingPanel buildingPanel = new BuildingPanel(buildings);
         JScrollPane scrollPane = new JScrollPane(buildingPanel);
 
-        GameData.getInstance().setSize(400,300);
-        Building firstBuilding = GameData.getInstance().getCurrBuilding();
-        Player player = new Player(firstBuilding.getX(),0,50,100);
+        Player player = new Player(0,0,50,100);
         player.setBounds(player.getX(), player.getY(), player.getBounds().width, player.getBounds().height);
+        GameData.getInstance().setPlayer(player);
         frame.add(player);
         frame.add(scrollPane, BorderLayout.CENTER);
 
