@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class BuildingParser {
@@ -15,6 +16,7 @@ public class BuildingParser {
 
             buildings.add(new Building(length, breadth));
         }
+        Collections.shuffle(buildings);
 
         return buildings;
     }

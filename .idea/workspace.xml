@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="Equations getter added">
-      <change beforePath="$PROJECT_DIR$/src/main/java/BuildingPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BuildingPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BuildingParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BuildingParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BuildingPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BuildingPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BuildingParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BuildingParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_17_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_26_2024_12_19_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_26_2024_12_19_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Equations.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Equations.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
@@ -25,11 +25,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="yud's_branch2" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -88,6 +83,8 @@
       <workItem from="1714971242244" duration="268000" />
       <workItem from="1714971511430" duration="5037000" />
       <workItem from="1715038627222" duration="679000" />
+      <workItem from="1715039309030" duration="165000" />
+      <workItem from="1715210557111" duration="830000" />
     </task>
     <task id="LOCAL-00001" summary="data extraction and parsing done">
       <option name="closed" value="true" />
@@ -145,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715039165154</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Equations getter added">
+      <option name="closed" value="true" />
+      <created>1715039392239</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715039392239</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
