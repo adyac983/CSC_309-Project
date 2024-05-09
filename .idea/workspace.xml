@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="buildings fix" />
+    <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="Equations getter added">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ChoicePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_26_2024_12_19_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_26_2024_12_19_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BuildingParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BuildingParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebDataExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebDataExtractor.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,6 +86,7 @@
       <workItem from="1715038627222" duration="679000" />
       <workItem from="1715039309030" duration="165000" />
       <workItem from="1715210557111" duration="830000" />
+      <workItem from="1715230282825" duration="305000" />
     </task>
     <task id="LOCAL-00001" summary="data extraction and parsing done">
       <option name="closed" value="true" />
@@ -165,7 +174,7 @@
     <MESSAGE value="Equations added" />
     <MESSAGE value="Equations added to all buildings" />
     <MESSAGE value="Equations getter added" />
-    <MESSAGE value="buildings fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="buildings fix" />
+    <MESSAGE value="added options for data extraction" />
+    <option name="LAST_COMMIT_MESSAGE" value="added options for data extraction" />
   </component>
 </project>

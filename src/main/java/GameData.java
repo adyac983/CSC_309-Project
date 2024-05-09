@@ -25,7 +25,7 @@ public class GameData extends PropertyChangeSupport {
 
     private GameData() {
         super(new Object());
-        List<DataRecord> dataRecords = WebDataExtractor.extractWebTableData();
+        List<DataRecord> dataRecords = WebDataExtractor.extractWebTableData(ChoicePanel.getChoice());
         buildings = BuildingParser.parseDataToBuildings(dataRecords);
         // Display the parsed buildings
 //        System.out.println("Parsed Buildings:");
