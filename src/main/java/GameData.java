@@ -25,50 +25,12 @@ public class GameData extends PropertyChangeSupport {
 
     private GameData() {
         super(new Object());
-        List<DataRecord> dataRecords = WebDataExtractor.extractWebTableData(ChoicePanel.getChoice());
-        buildings = BuildingParser.parseDataToBuildings(dataRecords);
-        // Display the parsed buildings
-//        System.out.println("Parsed Buildings:");
-//        for (int i = 0; i < buildings.size(); i++) {
-//            Building building = buildings.get(i);
-//            System.out.println("Building " + (i + 1) + ": Length=" + building.getLength() + ", Breadth=" + building.getBreadth());
-//        }
-        numBuildings = buildings.size();
-        this.recalculate();
     }
     public void setPlayer(Player player) {
         this.player = player;
     }
-
-    public void recalculate () {
-        double totalBreadth = 0;
-        int maxHeight = 0;
-        for (Building building : buildings) {
-            totalBreadth += building.getBreadth();
-            if (building.getLength() > maxHeight) {
-                maxHeight = (int) building.getLength();
-            }
-        }
-
-        // Calculate the scale factor to fit all buildings within the frame
-        double scaleFactor = 2000 / totalBreadth;
-
-        int finalMaxHeight = maxHeight;
-        int x = 10; // Starting x-coordinate for the first building
-        int y = 10; // Starting y-coordinate for all buildings
-
-        for (int i = currBuilding; i < numBuildings; i++) {
-            // Calculate the width and height of the building based on the scale factor
-            Building building = buildings.get(i);
-            int width = (int) (building.getBreadth() * scaleFactor);
-            int height = (int) (building.getLength() * scaleFactor);
-
-            building.setX(x);
-            building.setY(y);
-
-            x += width * 10 + 10; // Add a gap between buildings
-        }
-
+    public void setBuildings(List<Building> bs) {
+        this.buildings = bs;
     }
 
     public static GameData getInstance() {
@@ -77,7 +39,9 @@ public class GameData extends PropertyChangeSupport {
         }
         return instance;
     }
-
+    public Player getPlayer() {
+        return player;
+    }
     public List<Building> getBuildings() {
         return buildings;
     }
@@ -99,7 +63,7 @@ public class GameData extends PropertyChangeSupport {
     public void setMouseYOffset(int mouseYOffset) {
         this.mouseYOffset = mouseYOffset;
     }
-    public void setCurrBuilding() {
+    public void nextBuilding() {
         this.currBuilding += 1;
     }
     public Building getCurrBuilding() {

@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="Equations getter added">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ChoicePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_26_2024_12_19_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_26_2024_12_19_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BuildingParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BuildingParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BuildingPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BuildingPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ChoicePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChoicePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WebDataExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebDataExtractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BuildingPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BuildingPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BuildingParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BuildingParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataRecord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GameData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GameData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WebDataExtractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WebDataExtractor.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +30,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="yud's_branch2" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
