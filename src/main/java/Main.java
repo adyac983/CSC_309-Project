@@ -11,7 +11,7 @@ public class Main {
 
         JFrame frame = new JFrame("Building Data");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 300);
+        frame.setSize(600, 450);
 
         ChoicePanel choicePanel = new ChoicePanel();
         frame.add(choicePanel);

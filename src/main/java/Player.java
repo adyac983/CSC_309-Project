@@ -24,6 +24,11 @@ public class Player{
         return this.y;
     }
     public void moveTo(int x, int y) {
+        this.x = x;
+        this.y = y;
     } // ideally can get the next building's x and y and move to there
+    public void move() {
+
+    }
 
 }

@@ -46,14 +46,15 @@ class ChoicePanel extends JPanel {
         java.util.List<DataRecord> dataRecords = WebDataExtractor.extractWebTableData(choice);
         List<Building> buildings = BuildingParser.parseDataToBuildings(dataRecords);
 
-        GameData.getInstance().setBuildings(buildings);
-
         JFrame frame = new JFrame("Building Data");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 300);
+        frame.setSize(800, 600);
 
-        BuildingPanel buildingPanel = new BuildingPanel(buildings, frame);
+        BuildingPanel buildingPanel = new BuildingPanel(buildings);
         JScrollPane scrollPane = new JScrollPane(buildingPanel);
+        scrollPane.setViewportView(buildingPanel);
+        GameData.getInstance().setScrollPane(scrollPane);
+        GameData.getInstance().setBuildings(buildings);
 
         Building firstBuilding = GameData.getInstance().getCurrBuilding();
         Player player = new Player(firstBuilding.getX(), frame.getHeight()-(int)firstBuilding.getLength()-100);

@@ -16,9 +16,11 @@ public class Feedback extends JPanel {
 
         JLabel answerTextLabel = new JLabel("Your Answer:");
         answerField = new JTextField(10);
+        JLabel realanswerTextLabel = new JLabel("" + Equations.getAnswer(currentEquation));
+
         add(answerTextLabel);
         add(answerField);
-
+        add(realanswerTextLabel);
         JButton submitButton = new JButton("Submit");
         submitButton.addActionListener(new ActionListener() {
             @Override
@@ -35,10 +37,18 @@ public class Feedback extends JPanel {
             double correctAnswer = Equations.getAnswer(currentEquation);
             if (Math.abs(userAnswer - correctAnswer) < 0.0001) {
                 JOptionPane.showMessageDialog(this, "Correct!");
+                GameData.getInstance().nextBuilding();
+                GameData.getInstance().recalculate();
+                GameData.getInstance().getSp().getViewport().repaint();
+                Player player = GameData.getInstance().getPlayer();
+                System.out.println("player x after repaint:" + player.getX());
+                System.out.println("player y after repaint :" + player.getY());
             } else {
                 JOptionPane.showMessageDialog(this, "Incorrect! The correct answer is: " + correctAnswer);
             }
             currentEquation++;
+//            JLabel clickedLabel = (JLabel) e.getSource();
+//            clickedLabel.setText("" + Equations.getAnswer(currentEquation));
             if (currentEquation > 8)
                 currentEquation = 1;
             equationLabel.setText("Equation: " + Equations.getEquation(currentEquation));
