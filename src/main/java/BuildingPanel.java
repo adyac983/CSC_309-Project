@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.*;
 
+
 public class BuildingPanel extends JPanel {
     private List<Building> buildings;
     private int maxHeight;
