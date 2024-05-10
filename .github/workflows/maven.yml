@@ -36,11 +36,11 @@ jobs:
     - name: Step 05. Just for Fun an LS
       run: ls -al target
     - name: Step 06. Set Executable Permissions
-      run: chmod +x target/cs309lab5-1.0-SNAPSHOT.jar
+      run: chmod +x target/CSC_309-Project-1.0-SNAPSHOT.jar
     - name: Step 07. Upload Artifact
       uses: actions/upload-artifact@v4
       with:
         name: cs309lab5
-        path: target/cs309lab5-1.0-SNAPSHOT.jar
+        path: target/CSC_309-Project-1.0-SNAPSHOT.jar
 
    
