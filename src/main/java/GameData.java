@@ -10,8 +10,6 @@ public class GameData extends PropertyChangeSupport {
     private List<Building> buildings;
     private Player player;
 
-    private int mouseYOffset = 0;
-
     private int currBuilding = 0;
 
     private int numBuildings = 0;
@@ -73,23 +71,8 @@ public class GameData extends PropertyChangeSupport {
         return buildings;
     }
 
-    public int getMouseXOffset() {
-        return mouseXOffset;
-    }
-
-    public void setMouseXOffset(int mouseXOffset) {
-        this.mouseXOffset = mouseXOffset;
-    }
-
     private int mouseXOffset = 0;
 
-    public int getMouseYOffset() {
-        return mouseYOffset;
-    }
-
-    public void setMouseYOffset(int mouseYOffset) {
-        this.mouseYOffset = mouseYOffset;
-    }
     public void nextBuilding() {
         this.currBuilding += 1;
     }
