@@ -45,7 +45,6 @@ public class GameData extends PropertyChangeSupport {
         return player;
     }
     public int getScrollPaneHeight() {
-
         return sp.getViewport().getHeight();
     }
     public void recalculate() {
@@ -79,18 +78,13 @@ public class GameData extends PropertyChangeSupport {
     public List<Building> getBuildings() {
         return buildings;
     }
-
-    private int mouseXOffset = 0;
-
     public void nextBuilding() {
         this.currBuilding += 1;
     }
     public Building getCurrBuilding() {
+        if (buildings.isEmpty()) {
+            return null;
+        }
         return buildings.get(currBuilding);
-    }
-
-    public void repaint() {
-        System.out.println("hey");
-        firePropertyChange("repaint", null, null);
     }
 }

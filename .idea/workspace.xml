@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="jumping works now">
+    <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="crashing of boy">
+      <change afterPath="$PROJECT_DIR$/src/test/java/GameDataTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BuildingPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BuildingPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Feedback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BuildingPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BuildingPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Feedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Feedback.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/GameData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GameData.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715323713722</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="crashing of boy">
+      <created>1715325016829</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1715325016829</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +200,7 @@
     <MESSAGE value="Equations getter added" />
     <MESSAGE value="added options for data extraction" />
     <MESSAGE value="jumping works now" />
-    <option name="LAST_COMMIT_MESSAGE" value="jumping works now" />
+    <MESSAGE value="crashing of boy" />
+    <option name="LAST_COMMIT_MESSAGE" value="crashing of boy" />
   </component>
 </project>
