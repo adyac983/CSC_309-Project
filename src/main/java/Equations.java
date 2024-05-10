@@ -10,7 +10,7 @@ public class Equations {
     static {
         // Populate the equations map with equationNumber and corresponding equation
         for (int i = 1; i <= 131; i++) {
-            equationsMap.put(i, generateRandomEquation());
+            equationsMap.put(i, generateRandomEquation(i));
         }
     }
 
@@ -29,9 +29,9 @@ public class Equations {
         }
     }
 
-    private static String generateRandomEquation() {
-        int equationType = random.nextInt(2); // 0 for linear, 1 for quadratic
-        return equationType == 0 ? generateLinearEquation() : generateQuadraticEquation();
+    private static String generateRandomEquation(int i) {
+        int equationType = i;
+        return equationType <= 50 ? generateLinearEquation() : generateQuadraticEquation();
     }
 
     private static String generateLinearEquation() {
@@ -47,14 +47,14 @@ public class Equations {
         return a + "x^2 + " + b + "x + " + c + " = 0";
     }
 
-    private static double solveLinearEquation(String equation) {
+    static double solveLinearEquation(String equation) {
         String[] parts = equation.split(" ");
         double coefX = Double.parseDouble(parts[0].replace("x", ""));
         double constant = Double.parseDouble(parts[2]);
         return Double.parseDouble(df.format(-constant / coefX)); // Round off to always two decimal places
     }
 
-    private static double solveQuadraticEquation(String equation) {
+    static double solveQuadraticEquation(String equation) {
         String[] parts = equation.split(" ");
         double a = Double.parseDouble(parts[0].replace("x^2", ""));
         double b = Double.parseDouble(parts[2].replace("x", ""));
@@ -69,7 +69,7 @@ public class Equations {
             throw new IllegalArgumentException("No real roots for the quadratic equation.");
         }
     }
-    public HashMap<Integer, String> getEquationMap(){
+    public static HashMap<Integer, String> getEquationMap(){
         return equationsMap;
     }
 
