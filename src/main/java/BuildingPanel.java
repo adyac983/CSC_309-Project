@@ -53,7 +53,7 @@ public class BuildingPanel extends JPanel {
                 g.drawString(equation,  x + 10, scrollPaneHeight - height + 40);
             }
             x1++;
-            x += width + 10; // Add a gap between buildings
+            x += width + 70; // Add a gap between buildings
         }
     }
 
@@ -61,7 +61,7 @@ public class BuildingPanel extends JPanel {
     public Dimension getPreferredSize() {
         int totalWidth = 0;
         for (Building building : buildings) {
-            totalWidth += building.getBreadth() + 10;
+            totalWidth += building.getBreadth() + 50;
         }
         return new Dimension(totalWidth, maxHeight + 50);
     }

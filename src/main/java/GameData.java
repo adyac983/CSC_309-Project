@@ -15,6 +15,7 @@ public class GameData extends PropertyChangeSupport {
     private int numBuildings = 0;
 
     private JScrollPane sp = null;
+    private int result = 0;
 
     private GameData() {
         super(new Object());
@@ -47,7 +48,7 @@ public class GameData extends PropertyChangeSupport {
 
         return sp.getViewport().getHeight();
     }
-    public void recalculate () {
+    public void recalculate() {
         int x = 20;
         for (int i = 0; i < numBuildings; i++) {
             Building building = buildings.get(i);
@@ -56,16 +57,24 @@ public class GameData extends PropertyChangeSupport {
             building.setX(x);
             building.setY(height);
             //System.out.println("y: " + height);
-            x += width + 10;
+            x += width + 70;
         }
         if (player != null) {
             Building curr = getCurrBuilding();
             System.out.println("curr building height: " + curr.getY());
-            player.moveTo(curr.getX(),getScrollPaneHeight()-curr.getY()-100);
+            if (result == 0) {
+                player.moveTo(curr.getX(),getScrollPaneHeight()-curr.getY()-100);
+            }
+            else {
+                player.moveTo(curr.getX()-50,getScrollPaneHeight()-100);
+            }
         }
         System.out.println("player x:" + player.getX());
         System.out.println("player y:" + player.getY());
 
+    }
+    public void setResult(int r) {
+        this.result = r;
     }
     public List<Building> getBuildings() {
         return buildings;

@@ -45,6 +45,10 @@ public class Feedback extends JPanel {
                 System.out.println("player y after repaint :" + player.getY());
             } else {
                 JOptionPane.showMessageDialog(this, "Incorrect! The correct answer is: " + correctAnswer);
+                GameData.getInstance().nextBuilding();
+                GameData.getInstance().setResult(1);
+                GameData.getInstance().recalculate();
+                GameData.getInstance().getSp().getViewport().repaint();
             }
             currentEquation++;
 //            JLabel clickedLabel = (JLabel) e.getSource();
