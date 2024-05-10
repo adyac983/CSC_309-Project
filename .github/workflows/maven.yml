@@ -40,7 +40,7 @@ jobs:
     - name: Step 07. Upload Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: cs309lab5
+        name: CSC_309-Project
         path: target/CSC_309-Project-1.0-SNAPSHOT.jar
 
    
