@@ -45,7 +45,7 @@ public class BuildingPanel extends JPanel {
     }
 
     void loadDefaultBackgroundImage() {
-        loadBackgroundImage("Background 1"); // Default background
+        loadBackgroundImage("city"); // Default background
     }
 
     void loadBackgroundImage(String selectedBackground) {
@@ -64,7 +64,6 @@ public class BuildingPanel extends JPanel {
     protected void paintComponent(Graphics g) {
         GameData.getInstance().recalculate();
         super.paintComponent(g);
-
 
         int panelWidth = getWidth();
         int panelHeight = getHeight();
@@ -88,25 +87,67 @@ public class BuildingPanel extends JPanel {
         player.draw(g);
 
         // Draw buildings
-        int x = 20;
         int scrollPaneHeight = GameData.getInstance().getScrollPaneHeight();
         for (Building building : buildings) {
             int width = building.getBreadth();
             int height = (int) (building.getLength());
 
+            g.setColor(new Color(129, 63, 8));
+            g.fillRect(building.getX(), scrollPaneHeight - height, width, height);
 
+            // Draw brick texture
+            g.setColor(new Color(160, 82, 45));
+            for (int i = 0; i < height / 10 ; i++) {
+                for (int j = 0; j < (width / 20) + 1; j++) {
+                    if (j == (width / 20)) {
+                        g.fillRect(building.getX() + j * 20, scrollPaneHeight - height + i * 10, 10, 10);
+                    }
+                    else if ((i + j) % 2 == 0) {
+                        g.fillRect(building.getX() + j * 20, scrollPaneHeight - height + i * 10, 20, 10);
+
+                    }
+                }
+            }
+
+            //windows
+            int numHorizontalWindows = 3;
+            int numVerticalWindows = 40;
             g.setColor(Color.YELLOW);
-            g.fillRect(x, scrollPaneHeight - height, width, height);
+            int windowWidth = 20;
+            int windowHeight = 20;
+            int horizontalSpacing = (width - 30 - numHorizontalWindows * windowWidth) / (numHorizontalWindows - 1);
+            int verticalSpacing = 10;
 
+            int firstWindowX = building.getX() + ((width - windowWidth * numHorizontalWindows - horizontalSpacing * (numHorizontalWindows - 1)) / 2);
+            int firstWindowY = scrollPaneHeight - height + 20;
+
+            for (int i = 0; i < numHorizontalWindows; i++) {
+                g.fillRect(firstWindowX + i * (windowWidth + horizontalSpacing), firstWindowY, windowWidth, windowHeight);
+            }
+            for (int i = 0; i < numVerticalWindows; i++) {
+                for (int j = 0; j < numHorizontalWindows; j++) {
+                    g.fillRect(firstWindowX + j * (windowWidth + horizontalSpacing), firstWindowY + 30 + (i * (windowHeight + verticalSpacing)), windowWidth, windowHeight);
+                }
+            }
+
+            //door
+            g.setColor(Color.darkGray);
+            int doorHeight = Math.min(60, height / 4);
+            int doorWidth = Math.min(40, width / 3);
+            g.fillRect(building.getX() + width / 2 - doorWidth / 2, scrollPaneHeight - doorHeight, doorWidth, doorHeight);
+
+            //roof
+            g.setColor(Color.darkGray);
+            g.fillRect(building.getX() - 3, scrollPaneHeight - height, width + 6, 10);
+
+            // Draw building information
             g.setColor(Color.RED);
-            g.drawString("Building", x + 10, scrollPaneHeight - height - 20);
-            g.drawString("Length: " + building.getLength(), x + 10, scrollPaneHeight - height);
-            g.drawString("Breadth: " + building.getBreadth(), x + 10, scrollPaneHeight - height + 20);
+            g.drawString("Building", building.getX() + 10, scrollPaneHeight - height - 20);
+            g.drawString("Length: " + building.getLength(), building.getX() + 10, scrollPaneHeight - height);
+            g.drawString("Breadth: " + building.getBreadth(), building.getX() + 10, scrollPaneHeight - height + 20);
 
-            String equation = Equations.getEquation(x / (building.getBreadth() + 70) + 1);
-            g.drawString(equation, x + 10, scrollPaneHeight - height + 40);
-
-            x += width + 70; // Add a gap between buildings
+            String equation = Equations.getEquation(building.getX() / (building.getBreadth() + 70) + 1);
+            g.drawString(equation, building.getX() + 10, scrollPaneHeight - height + 40);
         }
     }
 
