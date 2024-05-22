@@ -62,10 +62,11 @@ public class GameData extends PropertyChangeSupport {
             Building curr = getCurrBuilding();
             System.out.println("curr building height: " + curr.getY());
             if (result == 0) {
-                player.moveTo(curr.getX(),getScrollPaneHeight()-curr.getY()-100);
+                player.moveTo(player.getX(),getScrollPaneHeight()-curr.getY()-100);
             }
             else {
                 player.moveTo(curr.getX()-50,getScrollPaneHeight()-100);
+                BuildingPanel.GameOver();
             }
         }
         System.out.println("player x:" + player.getX());

@@ -5,18 +5,21 @@ import java.util.List;
 import javax.swing.*;
 
 
-public class BuildingPanel extends JPanel {
+public class BuildingPanel extends JPanel implements ActionListener{
     private List<Building> buildings;
     private int maxHeight;
     private Image backgroundImage;
 
     private JComboBox<String> backgroundSelector;
+    private static Timer timer;
 
     public BuildingPanel(List<Building> buildings) {
         this.buildings = buildings;
         calculateDimensions();
         setupBackgroundSelector();
         loadDefaultBackgroundImage();
+        this.timer = new Timer(50,this);
+        timer.start();
     }
 
     void calculateDimensions() {
@@ -158,5 +161,16 @@ public class BuildingPanel extends JPanel {
             totalWidth += building.getBreadth() + 50;
         }
         return new Dimension(totalWidth, maxHeight + 50);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Player player = GameData.getInstance().getPlayer();
+        GameData.getInstance().getPlayer().moveTo(player.getX()+1, player.getY());
+        repaint();
+
+    }
+    public static void GameOver() {
+        timer.stop();
     }
 }

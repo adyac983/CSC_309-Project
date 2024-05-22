@@ -20,11 +20,9 @@ public class Feedback extends JPanel {
             answerTextLabel = new JLabel("Enter the bigger root:");
         }
         answerField = new JTextField(10);
-        JLabel realanswerTextLabel = new JLabel("" + Equations.getAnswer(currentEquation, levelChoice));
 
         add(answerTextLabel);
         add(answerField);
-        add(realanswerTextLabel);
         JButton submitButton = new JButton("Submit");
         submitButton.addActionListener(new ActionListener() {
             @Override
@@ -63,6 +61,8 @@ public class Feedback extends JPanel {
             if (Math.abs(userAnswer - correctAnswer) < 0.0001) {
                 JOptionPane.showMessageDialog(this, "Correct!");
                 GameData.getInstance().nextBuilding();
+                Building curr = GameData.getInstance().getCurrBuilding();
+                GameData.getInstance().getPlayer().moveTo(curr.getX(),GameData.getInstance().getScrollPaneHeight()-curr.getY()-100);
                 GameData.getInstance().recalculate();
                 GameData.getInstance().getSp().getViewport().repaint();
                 Player player = GameData.getInstance().getPlayer();

@@ -8,6 +8,7 @@ public class Player{
     private int x;
     private int y;
     private Image image;
+    private int hp;
 
     public Player(int x, int y) {
         this.x = x;
@@ -47,8 +48,12 @@ public class Player{
         this.x = x;
         this.y = y;
     } // ideally can get the next building's x and y and move to there
-    public void move() {
 
+    public int getHp() {
+        return hp;
     }
 
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
 }
