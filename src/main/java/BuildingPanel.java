@@ -146,8 +146,8 @@ public class BuildingPanel extends JPanel {
             g.drawString("Length: " + building.getLength(), building.getX() + 10, scrollPaneHeight - height);
             g.drawString("Breadth: " + building.getBreadth(), building.getX() + 10, scrollPaneHeight - height + 20);
 
-            String equation = Equations.getEquation(building.getX() / (building.getBreadth() + 70) + 1);
-            g.drawString(equation, building.getX() + 10, scrollPaneHeight - height + 40);
+            //String equation = Equations.getEquation(building.getX() / (building.getBreadth() + 70) + 1);
+            //g.drawString(equation, building.getX() + 10, scrollPaneHeight - height + 40);
         }
     }
 
