@@ -1,60 +1,78 @@
-import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Random;
 
 public class Equations {
     private static final Random random = new Random();
-    private static final DecimalFormat df = new DecimalFormat("#.00"); // Pattern for always two decimal places
     private static final HashMap<Integer, String> equationsMap = new HashMap<>();
+    private static int levelChoice = 2;
 
     static {
         // Populate the equations map with equationNumber and corresponding equation
         for (int i = 1; i <= 131; i++) {
-            equationsMap.put(i, generateRandomEquation(i));
+            if (levelChoice == 1) {
+                equationsMap.put(i, generateEasyEquation());
+            } else if (levelChoice == 2) {
+                equationsMap.put(i, generateMidEquation());
+            } else {
+                equationsMap.put(i, generateHardEquation());
+            }
         }
     }
 
-    public static String getEquation(int equationNumber) {
+    public static String getEquation(int equationNumber, int lC) {
+        levelChoice = lC;
         return equationsMap.getOrDefault(equationNumber, "No equation found for " + equationNumber);
     }
 
-    public static double getAnswer(int equationNumber) {
+    public static double getAnswer(int equationNumber, int lC) {
         String equation = equationsMap.getOrDefault(equationNumber, "No equation found for " + equationNumber);
-        if (equation.contains("x^2")) {
-            return solveQuadraticEquation(equation);
-        } else if (equation.contains("x")) {
-            return solveLinearEquation(equation);
+        if (lC == 3) {
+            return solveHardEquation(equation);
+        } else if (lC == 2) {
+            return solveMidEquation(equation);
         } else {
-            throw new IllegalArgumentException("Unsupported equation type: " + equation);
+            return solveEasyEquation(equation);
         }
     }
 
-    private static String generateRandomEquation(int i) {
-        int equationType = i;
-        return equationType <= 50 ? generateLinearEquation() : generateQuadraticEquation();
-    }
-
-    private static String generateLinearEquation() {
+    private static String generateEasyEquation() {
         int coefX = random.nextInt(10) + 1; // Random coefficient for x (1 to 10)
-        int constant = random.nextInt(20) - 10; // Random constant (-10 to 10)
-        return coefX + "x + " + constant + " = 0";
+        int result = coefX * (random.nextInt(10) + 1); // Random result to keep x as a whole number
+        return coefX + "x = " + result;
     }
 
-    private static String generateQuadraticEquation() {
-        int a = random.nextInt(5) + 1; // Random coefficient for x^2 (1 to 5)
-        int b = random.nextInt(10) - 5; // Random coefficient for x (-5 to 5)
-        int c = random.nextInt(10) - 5; // Random constant (-5 to 5)
+    private static String generateMidEquation() {
+        int coefX = random.nextInt(10) + 1; // Random coefficient for x (1 to 10)
+        int result = random.nextInt(50) + 1; // Random result
+        int constant = result - (coefX * (random.nextInt(10) + 1)); // Ensure x is a whole number
+        return coefX + "x + " + constant + " = " + result;
+    }
+
+    private static String generateHardEquation() {
+        int root1 = random.nextInt(10) + 1; // Random root1 (1 to 10)
+        int root2 = random.nextInt(10) + 1; // Random root2 (1 to 10)
+        int a = 1; // To ensure roots are whole numbers
+        int b = - (root1 + root2);
+        int c = root1 * root2;
         return a + "x^2 + " + b + "x + " + c + " = 0";
     }
 
-    static double solveLinearEquation(String equation) {
+    static double solveEasyEquation(String equation) {
+        String[] parts = equation.split(" ");
+        double coefX = Double.parseDouble(parts[0].replace("x", ""));
+        double result = Double.parseDouble(parts[2]);
+        return result / coefX;
+    }
+
+    static double solveMidEquation(String equation) {
         String[] parts = equation.split(" ");
         double coefX = Double.parseDouble(parts[0].replace("x", ""));
         double constant = Double.parseDouble(parts[2]);
-        return Double.parseDouble(df.format(-constant / coefX)); // Round off to always two decimal places
+        double result = Double.parseDouble(parts[4]);
+        return (result - constant) / coefX;
     }
 
-    static double solveQuadraticEquation(String equation) {
+    static double solveHardEquation(String equation) {
         String[] parts = equation.split(" ");
         double a = Double.parseDouble(parts[0].replace("x^2", ""));
         double b = Double.parseDouble(parts[2].replace("x", ""));
@@ -64,12 +82,13 @@ public class Equations {
         if (discriminant >= 0) {
             double root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
             double root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
-            return Double.parseDouble(df.format(Math.max(root1, root2))); // Round off to always two decimal places
+            return Math.max(root1, root2);
         } else {
             throw new IllegalArgumentException("No real roots for the quadratic equation.");
         }
     }
-    public static HashMap<Integer, String> getEquationMap(){
+
+    public static HashMap<Integer, String> getEquationMap() {
         return equationsMap;
     }
 
