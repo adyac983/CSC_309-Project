@@ -12,6 +12,7 @@ public class BuildingPanel extends JPanel implements ActionListener{
 
     private JComboBox<String> backgroundSelector;
     private static Timer timer;
+    private static JLabel hpLabel;
 
     public BuildingPanel(List<Building> buildings) {
         this.buildings = buildings;
@@ -20,6 +21,12 @@ public class BuildingPanel extends JPanel implements ActionListener{
         loadDefaultBackgroundImage();
         this.timer = new Timer(50,this);
         timer.start();
+        hpLabel = new JLabel("HP: ");
+        hpLabel.setForeground(Color.RED);
+        Font font = new Font("Arial", Font.BOLD, 18);
+        hpLabel.setFont(font);
+        hpLabel.setBounds(50, 50, 200, 30);
+        add(hpLabel);
     }
 
     void calculateDimensions() {
@@ -172,5 +179,10 @@ public class BuildingPanel extends JPanel implements ActionListener{
     }
     public static void GameOver() {
         timer.stop();
+    }
+    public static void changeHpLabelText() {
+        if (GameData.getInstance().getPlayer() != null) {
+            hpLabel.setText("HP: " + GameData.getInstance().getPlayer().getHp());
+        }
     }
 }

@@ -60,7 +60,6 @@ public class GameData extends PropertyChangeSupport {
         }
         if (player != null) {
             Building curr = getCurrBuilding();
-            System.out.println("curr building height: " + curr.getY());
             if (result == 0) {
                 player.moveTo(player.getX(),getScrollPaneHeight()-curr.getY()-100);
             }
@@ -69,9 +68,7 @@ public class GameData extends PropertyChangeSupport {
                 BuildingPanel.GameOver();
             }
         }
-        System.out.println("player x:" + player.getX());
-        System.out.println("player y:" + player.getY());
-
+        BuildingPanel.changeHpLabelText();
     }
     public void setResult(int r) {
         this.result = r;
