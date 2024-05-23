@@ -60,9 +60,11 @@ public class Feedback extends JPanel {
             double correctAnswer = Equations.getAnswer(currentEquation, levelChoice);
             if (Math.abs(userAnswer - correctAnswer) < 0.0001) {
                 JOptionPane.showMessageDialog(this, "Correct!");
-                GameData.getInstance().nextBuilding();
-                Building curr = GameData.getInstance().getCurrBuilding();
-                GameData.getInstance().getPlayer().moveTo(curr.getX(),GameData.getInstance().getScrollPaneHeight()-curr.getY()-100);
+                GameData.getInstance().setResult(0);
+                //move player to next building if player isn't at the bottom already
+                if (GameData.getInstance().getPlayer().getY() != GameData.getInstance().getScrollPaneHeight()-100) {
+                    GameData.getInstance().nextBuilding();
+                }
                 GameData.getInstance().recalculate();
                 GameData.getInstance().getSp().getViewport().repaint();
                 Player player = GameData.getInstance().getPlayer();
@@ -70,8 +72,8 @@ public class Feedback extends JPanel {
                 System.out.println("player y after repaint :" + player.getY());
             } else {
                 JOptionPane.showMessageDialog(this, "Incorrect! The correct answer is: " + correctAnswer);
-                GameData.getInstance().nextBuilding();
                 GameData.getInstance().setResult(1);
+                GameData.getInstance().getPlayer().setHp(GameData.getInstance().getPlayer().getHp()-1);
                 GameData.getInstance().recalculate();
                 GameData.getInstance().getSp().getViewport().repaint();
             }

@@ -177,8 +177,13 @@ public class BuildingPanel extends JPanel implements ActionListener{
         repaint();
 
     }
-    public static void GameOver() {
+    public static void stopTimer() {
         timer.stop();
+    }
+    public static void startTimer() {
+        if (!timer.isRunning()) {
+            timer.start();
+        }
     }
     public static void changeHpLabelText() {
         if (GameData.getInstance().getPlayer() != null) {

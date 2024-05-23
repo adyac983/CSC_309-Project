@@ -48,6 +48,9 @@ public class GameData extends PropertyChangeSupport {
         return sp.getViewport().getHeight();
     }
     public void recalculate() {
+        if (player.getHp() <= 0) {
+            Gameover();
+        }
         int x = 20;
         for (int i = 0; i < numBuildings; i++) {
             Building building = buildings.get(i);
@@ -59,16 +62,25 @@ public class GameData extends PropertyChangeSupport {
             x += width + 70;
         }
         if (player != null) {
+            BuildingPanel.changeHpLabelText();
             Building curr = getCurrBuilding();
-            if (result == 0) {
+            if (curr.getX()+150 < player.getX()+20) { //player took too long to answer
+                result = 1;
+                player.setHp(player.getHp()-1);
+            }
+            if (result == 0) { //default or player answered correct
                 player.moveTo(player.getX(),getScrollPaneHeight()-curr.getY()-100);
+                BuildingPanel.startTimer();
             }
             else {
+                if (player.getY() != getScrollPaneHeight()-100) { //move player to bottom of next building
+                    nextBuilding();
+                    curr = getCurrBuilding();
+                }
                 player.moveTo(curr.getX()-50,getScrollPaneHeight()-100);
-                BuildingPanel.GameOver();
+                BuildingPanel.stopTimer();
             }
         }
-        BuildingPanel.changeHpLabelText();
     }
     public void setResult(int r) {
         this.result = r;
@@ -84,5 +96,8 @@ public class GameData extends PropertyChangeSupport {
             return null;
         }
         return buildings.get(currBuilding);
+    }
+    public void Gameover() {
+        BuildingPanel.stopTimer();
     }
 }
