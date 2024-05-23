@@ -6,6 +6,8 @@ import java.util.List;
 
 class ChoicePanel extends JPanel {
     static int choice;
+
+    private int levelchoice;
     public ChoicePanel() {
         setLayout(new GridLayout(3, 1));
 
@@ -46,6 +48,7 @@ class ChoicePanel extends JPanel {
         java.util.List<DataRecord> dataRecords = WebDataExtractor.extractWebTableData(choice);
         List<Building> buildings = BuildingParser.parseDataToBuildings(dataRecords);
 
+
         JFrame frame = new JFrame("Building Data");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 600);
@@ -60,14 +63,19 @@ class ChoicePanel extends JPanel {
         Player player = new Player(firstBuilding.getX(), frame.getHeight()-(int)firstBuilding.getLength()-100);
         GameData.getInstance().setPlayer(player);
         frame.add(scrollPane, BorderLayout.CENTER);
+
         // Feedback panel
         JPanel feedbackPanel = new JPanel(new BorderLayout());
-        Feedback feedback = new Feedback();
+        Feedback feedback = new Feedback(levelchoice);
         feedbackPanel.add(feedback, BorderLayout.SOUTH);
         frame.add(feedbackPanel, BorderLayout.SOUTH);
         frame.setVisible(true);
     }
     public static int getChoice(){
         return choice;
+    }
+
+    public void setLevelChoice(int i) {
+        levelchoice=i;
     }
 }

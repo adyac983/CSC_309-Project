@@ -8,11 +8,13 @@ public class Feedback extends JPanel {
     private JLabel equationLabel;
     private int currentEquation = 1;
     private int hintStep = 1;
-    private int levelChoice = 2;
+    private int levelChoice;
 
-    public Feedback() {
+    public Feedback(int level) {
         setLayout(new FlowLayout());
-
+        this.levelChoice=level;
+        Equations.setLevelChoice(level);
+        System.out.println(levelChoice);
         equationLabel = new JLabel("Equation: " + Equations.getEquation(currentEquation, levelChoice));
         add(equationLabel);
         JLabel answerTextLabel = new JLabel("Enter your answer:");
@@ -93,5 +95,9 @@ public class Feedback extends JPanel {
         String hint = Hints.getHint(Equations.getEquation(currentEquation, levelChoice), hintStep);
         JOptionPane.showMessageDialog(this, hint);
         hintStep++;
+    }
+
+    public void setLevelChoice(int i) {
+        this.levelChoice = i;
     }
 }

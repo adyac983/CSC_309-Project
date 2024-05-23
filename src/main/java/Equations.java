@@ -4,7 +4,7 @@ import java.util.Random;
 public class Equations {
     private static final Random random = new Random();
     private static final HashMap<Integer, String> equationsMap = new HashMap<>();
-    private static int levelChoice = 2;
+    private static int levelChoice;
 
     static {
         // Populate the equations map with equationNumber and corresponding equation
@@ -19,8 +19,11 @@ public class Equations {
         }
     }
 
+
     public static String getEquation(int equationNumber, int lC) {
         levelChoice = lC;
+        System.out.println(levelChoice);
+
         return equationsMap.getOrDefault(equationNumber, "No equation found for " + equationNumber);
     }
 
@@ -85,6 +88,19 @@ public class Equations {
             return Math.max(root1, root2);
         } else {
             throw new IllegalArgumentException("No real roots for the quadratic equation.");
+        }
+    }
+    public static void setLevelChoice(int level) {
+        levelChoice = level;
+        equationsMap.clear();
+        for (int i = 1; i <= 131; i++) {
+            if (levelChoice == 1) {
+                equationsMap.put(i, generateEasyEquation());
+            } else if (levelChoice == 2) {
+                equationsMap.put(i, generateMidEquation());
+            } else {
+                equationsMap.put(i, generateHardEquation());
+            }
         }
     }
 
