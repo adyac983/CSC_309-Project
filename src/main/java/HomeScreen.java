@@ -4,6 +4,7 @@ import java.awt.*;
 public class HomeScreen extends JPanel {
     private final CardLayout cardLayout;
     private final JPanel mainPanel;
+    private JPanel gameOverPanel;
     private JFrame frame;
 
 
@@ -41,14 +42,24 @@ public class HomeScreen extends JPanel {
         levelPanel.add(level2Button);
         levelPanel.add(level3Button);
 
+        // game over Screen Panel
+        gameOverPanel = new JPanel(new BorderLayout());
+        JButton gameOverButton = new JButton("Play again");
+        gameOverButton.addActionListener(e -> cardLayout.show(mainPanel, "levelPanel"));
+        gameOverPanel.add(gameOverButton, BorderLayout.CENTER);
+
         mainPanel.add(homePanel, "homePanel");
         mainPanel.add(levelPanel, "levelPanel");
         mainPanel.add(choicePanel, "themePanel");
+        mainPanel.add(gameOverPanel, "gameOverPanel");
 
         cardLayout.show(mainPanel, "homePanel");
 
         setLayout(new BorderLayout());
         add(mainPanel, BorderLayout.CENTER);
 
+    }
+    public void GameOver() {
+        cardLayout.show(mainPanel, "gameOverPanel");
     }
 }

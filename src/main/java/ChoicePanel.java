@@ -6,7 +6,7 @@ import java.util.List;
 
 class ChoicePanel extends JPanel {
     static int choice;
-
+    private JFrame frame;
     private int levelchoice;
     public ChoicePanel() {
         setLayout(new GridLayout(3, 1));
@@ -49,10 +49,11 @@ class ChoicePanel extends JPanel {
         List<Building> buildings = BuildingParser.parseDataToBuildings(dataRecords);
 
 
-        JFrame frame = new JFrame("Building Data");
+        frame = new JFrame("Building Data");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 600);
 
+        GameData.getInstance().setFrame(frame);
         BuildingPanel buildingPanel = new BuildingPanel(buildings);
         JScrollPane scrollPane = new JScrollPane(buildingPanel);
         scrollPane.setViewportView(buildingPanel);
@@ -78,4 +79,5 @@ class ChoicePanel extends JPanel {
     public void setLevelChoice(int i) {
         levelchoice=i;
     }
+
 }

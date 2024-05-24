@@ -10,5 +10,6 @@ public class Main {
         HomeScreen homeScreen = new HomeScreen();
         frame.add(homeScreen);
         frame.setVisible(true);
+        GameData.getInstance().setHomeScreen(homeScreen);
     }
 }

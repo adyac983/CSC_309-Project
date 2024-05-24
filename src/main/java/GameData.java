@@ -16,9 +16,17 @@ public class GameData extends PropertyChangeSupport {
 
     private JScrollPane sp = null;
     private int result = 0;
+    private HomeScreen homeScreen;
+    private JFrame frame;
 
     private GameData() {
         super(new Object());
+    }
+    public void setFrame(JFrame frame) {
+        this.frame = frame;
+    }
+    public void setHomeScreen(HomeScreen s) {
+        this.homeScreen = s;
     }
     public void setPlayer(Player player) {
         this.player = player;
@@ -67,6 +75,7 @@ public class GameData extends PropertyChangeSupport {
             if (curr.getX()+150 < player.getX()+20) { //player took too long to answer
                 result = 1;
                 player.setHp(player.getHp()-1);
+                BuildingPanel.changeHpLabelText();
             }
             if (result == 0) { //default or player answered correct
                 player.moveTo(player.getX(),getScrollPaneHeight()-curr.getY()-100);
@@ -99,5 +108,7 @@ public class GameData extends PropertyChangeSupport {
     }
     public void Gameover() {
         BuildingPanel.stopTimer();
+        homeScreen.GameOver();
+        frame.dispose();
     }
 }
