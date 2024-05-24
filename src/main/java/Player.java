@@ -2,7 +2,6 @@ import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import javax.imageio.ImageIO;
-import javax.swing.JPanel;
 
 public class Player{
     private int x;
@@ -27,7 +26,6 @@ public class Player{
             ex.printStackTrace();
         }
     }
-
     public void draw(Graphics g) {
 
         if (image != null) {
@@ -35,10 +33,7 @@ public class Player{
         } else {
             g.fillRect(x, y, 50, 100); // Default rectangle if image not found
         }
-//        g.setColor(Color.RED);
-//        g.fillRect(x, y, 50, 100);
     }
-
     public int getX() {
         return this.x;
     }

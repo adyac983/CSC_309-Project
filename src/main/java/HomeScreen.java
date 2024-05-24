@@ -1,12 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
-
 public class HomeScreen extends JPanel {
     private final CardLayout cardLayout;
     private final JPanel mainPanel;
     private JPanel gameOverPanel;
-    private JFrame frame;
-
 
     public HomeScreen() {
 

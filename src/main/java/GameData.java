@@ -1,19 +1,12 @@
 import javax.swing.*;
-import java.awt.*;
 import java.beans.PropertyChangeSupport;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 public class GameData extends PropertyChangeSupport {
-
     private static GameData instance;
     private List<Building> buildings;
     private Player player;
-
     private int currBuilding = 0;
-
     private int numBuildings = 0;
-
     private JScrollPane sp = null;
     private int result = 0;
     private HomeScreen homeScreen;
@@ -38,11 +31,9 @@ public class GameData extends PropertyChangeSupport {
     public void setScrollPane(JScrollPane s) {
         this.sp = s;
     }
-
     public JScrollPane getSp() {
         return sp;
     }
-
     public static GameData getInstance() {
         if (instance == null) {
             instance = new GameData();
