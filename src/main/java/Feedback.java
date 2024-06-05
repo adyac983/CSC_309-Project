@@ -98,8 +98,8 @@ public class Feedback extends JPanel {
             }
             currentEquation++;
             hintStep = 1;
-            if (currentEquation > 8)
-                currentEquation = 1;
+            //if (currentEquation > 8)
+             //   currentEquation = 1;
             equationLabel.setText("Equation: " + Equations.getEquation(currentEquation, levelChoice));
             answerField.setText("");
         } catch (NumberFormatException ex) {

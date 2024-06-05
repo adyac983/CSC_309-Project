@@ -37,7 +37,8 @@ public class Equations {
                 return "Which of the previous 9 countries has the highest forest area?";
             }
         }
-        return equationsMap.getOrDefault(equationNumber, "No equation found for " + equationNumber);
+        else{
+        return equationsMap.getOrDefault(equationNumber, "No equation found for " + equationNumber);}
     }
 
     public static String getAnswer(int equationNumber, int lC) {
