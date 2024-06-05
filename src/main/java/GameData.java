@@ -11,6 +11,7 @@ public class GameData extends PropertyChangeSupport {
     private int result = 0;
     private HomeScreen homeScreen;
     private JFrame frame;
+    private int score = 0;
 
     private GameData() {
         super(new Object());
@@ -101,5 +102,16 @@ public class GameData extends PropertyChangeSupport {
         BuildingPanel.stopTimer();
         homeScreen.GameOver();
         frame.dispose();
+    }
+    public int getScore() {
+        return score;
+    }
+    public void setScore(int s) {
+        this.score = s;
+    }
+    public void reset() {
+        this.score = 0;
+        this.currBuilding = 0;
+        this.result = 0;
     }
 }

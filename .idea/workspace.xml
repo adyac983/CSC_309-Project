@@ -6,19 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="game over screen added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BuildingPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BuildingPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ChoicePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChoicePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Feedback.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HomeScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ChoicePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChoicePanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ChoicePanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChoicePanel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ChoicePanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChoicePanel$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ChoicePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChoicePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Equations.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Equations.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Feedback$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Feedback$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Feedback$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Feedback$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Feedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Feedback.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/GameData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GameData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Player.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716576769838</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="game over screen added">
+      <created>1716591178310</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1716591178310</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

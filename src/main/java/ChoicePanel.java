@@ -53,6 +53,8 @@ class ChoicePanel extends JPanel {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 600);
 
+        GameData.getInstance().reset();
+
         GameData.getInstance().setFrame(frame);
         BuildingPanel buildingPanel = new BuildingPanel(buildings);
         JScrollPane scrollPane = new JScrollPane(buildingPanel);
@@ -62,6 +64,7 @@ class ChoicePanel extends JPanel {
 
         Building firstBuilding = GameData.getInstance().getCurrBuilding();
         Player player = new Player(firstBuilding.getX(), frame.getHeight()-(int)firstBuilding.getLength()-100);
+        System.out.println("player x " + player.getX());
         GameData.getInstance().setPlayer(player);
         frame.add(scrollPane, BorderLayout.CENTER);
 

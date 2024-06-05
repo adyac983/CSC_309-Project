@@ -64,6 +64,9 @@ public class Feedback extends JPanel {
                 //correct answer
                 JOptionPane.showMessageDialog(this, "Correct!");
                 GameData.getInstance().setResult(0);
+                //add score
+                GameData.getInstance().setScore(GameData.getInstance().getScore()+1);
+                BuildingPanel.changeScoreLabelText();
                 //move player to next building if player isn't at the bottom already
                 if (GameData.getInstance().getPlayer().getY() != GameData.getInstance().getScrollPaneHeight()-100) {
                     GameData.getInstance().nextBuilding();
@@ -81,8 +84,6 @@ public class Feedback extends JPanel {
             }
             currentEquation++;
             hintStep = 1;
-//            JLabel clickedLabel = (JLabel) e.getSource();
-//            clickedLabel.setText("" + Equations.getAnswer(currentEquation));
             if (currentEquation > 8)
                 currentEquation = 1;
             equationLabel.setText("Equation: " + Equations.getEquation(currentEquation, levelChoice));
