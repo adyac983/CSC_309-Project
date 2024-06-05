@@ -2,11 +2,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import java.util.Objects;
 import javax.swing.*;
 
 
 public class BuildingPanel extends JPanel implements ActionListener{
-    private List<Building> buildings;
+    private static List<Building> buildings;
     private int maxHeight;
     private Image backgroundImage;
 
@@ -161,12 +162,15 @@ public class BuildingPanel extends JPanel implements ActionListener{
 
             // Draw building information
             g.setColor(Color.RED);
-            g.drawString("Building", building.getX() + 10, scrollPaneHeight - height - 20);
+            g.drawString(building.getCountry(), building.getX() + 10, scrollPaneHeight - height - 20);
             g.drawString("Length: " + building.getLength(), building.getX() + 10, scrollPaneHeight - height);
             g.drawString("Breadth: " + building.getBreadth(), building.getX() + 10, scrollPaneHeight - height + 20);
 
             //String equation = Equations.getEquation(building.getX() / (building.getBreadth() + 70) + 1);
-            //g.drawString(equation, building.getX() + 10, scrollPaneHeight - height + 40);
+            //if(!Objects.isNull(building.getCountry())){
+              //  g.drawString(, building.getX() + 10, scrollPaneHeight - height + 40);
+            //}
+
         }
     }
 
@@ -199,6 +203,7 @@ public class BuildingPanel extends JPanel implements ActionListener{
             hpLabel.setText("HP: " + GameData.getInstance().getPlayer().getHp());
         }
     }
+    public static List<Building> getBuildings(){ return buildings;}
     public static void changeScoreLabelText() {
         scoreLabel.setText("Score: " + GameData.getInstance().getScore());
     }

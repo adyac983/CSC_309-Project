@@ -1,9 +1,11 @@
 import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 
 public class Equations {
     private static final Random random = new Random();
     private static final HashMap<Integer, String> equationsMap = new HashMap<>();
+    private static List<DataRecord> b = null;
     private static int levelChoice;
 
     static {
@@ -16,6 +18,7 @@ public class Equations {
             } else {
                 equationsMap.put(i, generateHardEquation());
             }
+            b = ChoicePanel.getDataRecord();
         }
     }
 
@@ -23,18 +26,32 @@ public class Equations {
     public static String getEquation(int equationNumber, int lC) {
         levelChoice = lC;
         System.out.println(levelChoice);
-
+        if (equationNumber % 10 == 0) {
+            if(lC == 1){
+                return "Which of the previous 9 countries has the highest air pollution?" ;
+            }
+            else if (lC == 2){
+                return "Which of the previous 9 countries has the highest co2 emissions?";
+            }
+            else{
+                return "Which of the previous 9 countries has the highest forest area?";
+            }
+        }
         return equationsMap.getOrDefault(equationNumber, "No equation found for " + equationNumber);
     }
 
-    public static double getAnswer(int equationNumber, int lC) {
+    public static String getAnswer(int equationNumber, int lC) {
+        if (equationNumber % 10 == 0) {
+            String tallestBuilding = getTallestBuilding(equationNumber - 9, equationNumber - 1);
+            return tallestBuilding;
+        }
         String equation = equationsMap.getOrDefault(equationNumber, "No equation found for " + equationNumber);
         if (lC == 3) {
-            return solveHardEquation(equation);
+            return String.valueOf(solveHardEquation(equation));
         } else if (lC == 2) {
-            return solveMidEquation(equation);
+            return String.valueOf(solveMidEquation(equation));
         } else {
-            return solveEasyEquation(equation);
+            return String.valueOf(solveEasyEquation(equation));
         }
     }
 
@@ -90,6 +107,18 @@ public class Equations {
             throw new IllegalArgumentException("No real roots for the quadratic equation.");
         }
     }
+
+    private static String getTallestBuilding(int start, int end) {
+        int tallestBuilding = start;
+        Double maxHeight = Double.valueOf(b.get(start).getNum());
+        for (int i = start + 1; i <= end; i++) {
+            if (Double.valueOf(b.get(i).getNum()) > maxHeight) {
+                tallestBuilding = i;
+                maxHeight = Double.valueOf(b.get(i).getNum());
+            }
+        }
+        return b.get(tallestBuilding).getCountry();
+    }
     public static void setLevelChoice(int level) {
         levelChoice = level;
         equationsMap.clear();
@@ -108,13 +137,4 @@ public class Equations {
         return equationsMap;
     }
 
-   /* public static void main(String[] args) {
-        int equationNumber = random.nextInt(131) + 1; // Random equation number from 1 to 131
-
-        String equation = Equations.getEquation(equationNumber);
-        System.out.println("Equation " + equationNumber + ": " + equation);
-
-        double answer = Equations.getAnswer(equationNumber);
-        System.out.println("Solution: " + answer);
-    }*/
 }

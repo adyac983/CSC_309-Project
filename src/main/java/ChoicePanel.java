@@ -8,6 +8,7 @@ class ChoicePanel extends JPanel {
     static int choice;
     private JFrame frame;
     private int levelchoice;
+    private static List<DataRecord> dr;
     public ChoicePanel() {
         setLayout(new GridLayout(3, 1));
 
@@ -45,8 +46,8 @@ class ChoicePanel extends JPanel {
     }
 
     private void handleButtonAction(int selectedSource) {
-        java.util.List<DataRecord> dataRecords = WebDataExtractor.extractWebTableData(choice);
-        List<Building> buildings = BuildingParser.parseDataToBuildings(dataRecords);
+        dr = WebDataExtractor.extractWebTableData(choice);
+        List<Building> buildings = BuildingParser.parseDataToBuildings(dr);
 
 
         frame = new JFrame("Building Data");
@@ -82,5 +83,5 @@ class ChoicePanel extends JPanel {
     public void setLevelChoice(int i) {
         levelchoice=i;
     }
-
+    public static List<DataRecord> getDataRecord(){return dr;}
 }
