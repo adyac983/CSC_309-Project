@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.beans.PropertyChangeSupport;
 import java.util.List;
 public class GameData extends PropertyChangeSupport {
@@ -51,6 +52,8 @@ public class GameData extends PropertyChangeSupport {
         if (player.getHp() <= 0) {
             Gameover();
         }
+
+        // Calculate building positions
         int x = 20;
         for (int i = 0; i < numBuildings; i++) {
             Building building = buildings.get(i);
@@ -58,31 +61,43 @@ public class GameData extends PropertyChangeSupport {
             int height = (int) (building.getLength());
             building.setX(x);
             building.setY(height);
-            //System.out.println("y: " + height);
             x += width + 70;
         }
+
+        // Update UI and check player position
         if (player != null) {
             BuildingPanel.changeHpLabelText();
             Building curr = getCurrBuilding();
-            if (curr.getX()+150 < player.getX()+20) { //player took too long to answer
+            if (curr.getX() + 150 < player.getX() + 20) { // player took too long to answer
                 result = 1;
-                player.setHp(player.getHp()-1);
+                player.setHp(player.getHp() - 1);
                 BuildingPanel.changeHpLabelText();
             }
-            if (result == 0) { //default or player answered correct
-                player.moveTo(player.getX(),getScrollPaneHeight()-curr.getY()-100);
+
+
+            if (result == 0) { // default or player answered correctly
+                player.moveTo(player.getX(), getScrollPaneHeight() - curr.getY() - 100);
                 BuildingPanel.startTimer();
-            }
-            else {
-                if (player.getY() != getScrollPaneHeight()-100) { //move player to bottom of next building
+                int scrollToX = curr.getX() - 50;
+                int scrollToY = 0;
+                sp.getViewport().setViewPosition(new Point(scrollToX, scrollToY));
+            } else {
+                if (player.getY() != getScrollPaneHeight() - 100) { // move player to bottom of next building
                     nextBuilding();
                     curr = getCurrBuilding();
                 }
-                player.moveTo(curr.getX()-50,getScrollPaneHeight()-100);
+                player.moveTo(curr.getX() - 50, getScrollPaneHeight() - 100);
                 BuildingPanel.stopTimer();
+
+
+                int scrollToX = curr.getX() - 50;
+                int scrollToY = 0;
+                sp.getViewport().setViewPosition(new Point(scrollToX, scrollToY));
             }
         }
     }
+
+
     public void setResult(int r) {
         this.result = r;
     }

@@ -48,6 +48,8 @@ public class BuildingPanel extends JPanel implements ActionListener{
         }
     }
 
+
+
     void setupBackgroundSelector() {
         String[] backgroundOptions = {"City", "CO2", "Forest"};
         backgroundSelector = new JComboBox<>(backgroundOptions);
@@ -166,9 +168,10 @@ public class BuildingPanel extends JPanel implements ActionListener{
             g.drawString("Length: " + building.getLength(), building.getX() + 10, scrollPaneHeight - height);
             g.drawString("Breadth: " + building.getBreadth(), building.getX() + 10, scrollPaneHeight - height + 20);
 
+
             //String equation = Equations.getEquation(building.getX() / (building.getBreadth() + 70) + 1);
             //if(!Objects.isNull(building.getCountry())){
-              //  g.drawString(, building.getX() + 10, scrollPaneHeight - height + 40);
+            //  g.drawString(, building.getX() + 10, scrollPaneHeight - height + 40);
             //}
 
         }
