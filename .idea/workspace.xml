@@ -4,22 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="score added">
-      <change afterPath="$PROJECT_DIR$/src/main/java/MultiplayerClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MultiplayerData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MultiplayerServer.java" afterDir="false" />
+    <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="multiplayer half done">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BuildingPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BuildingPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ChoicePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChoicePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HomeScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GameDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GameDataTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BuildingPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BuildingPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BuildingPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BuildingPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ChoicePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChoicePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GameData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GameData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HomeScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/HomeScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Feedback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Feedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Feedback.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,26 +43,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Equations.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Equations.executor": "Run",
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/yuddu/OneDrive/Documents/GitHub/CSC_309-Project/Dockerfile",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Application.singleplayer_main">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yuddu\OneDrive\Documents\GitHub\CSC_309-Project" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.gamedatatest">
     <configuration name="server_multiplayer" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="MultiplayerServer" />
       <module name="CSC_309-Project" />
@@ -121,10 +117,32 @@
       <compose-preview-run-configuration composable-fqn="" />
       <method v="2" />
     </configuration>
+    <configuration name="gamedatatest" type="JUnit" factoryName="JUnit">
+      <module name="CSC_309-Project" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GameDataTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CSC_309-Project_dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="csc309project" />
+          <option name="containerName" value="csc309Project" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.singleplayer_main" />
       <item itemvalue="Application.server_multiplayer" />
       <item itemvalue="Compose Preview.Unnamed" />
+      <item itemvalue="Docker.CSC_309-Project_dockerfile" />
+      <item itemvalue="JUnit.gamedatatest" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -280,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717624158220</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="multiplayer half done">
+      <created>1717751043907</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1717751043907</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,6 +336,7 @@
     <MESSAGE value="game over screen added" />
     <MESSAGE value="score added" />
     <MESSAGE value="special question added" />
-    <option name="LAST_COMMIT_MESSAGE" value="special question added" />
+    <MESSAGE value="multiplayer half done" />
+    <option name="LAST_COMMIT_MESSAGE" value="multiplayer half done" />
   </component>
 </project>

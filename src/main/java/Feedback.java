@@ -66,12 +66,18 @@ public class Feedback extends JPanel {
                 if (userAns.equals(corrAns)){
                     correct = true;
                 }
+                else {
+                    correct = false;
+                }
             }
             else{
                 double userAnswer = Double.parseDouble(answerField.getText());
                 double correctAnswer = Double.valueOf(Equations.getAnswer(currentEquation, levelChoice));
                 if(Math.abs(userAnswer - correctAnswer) < 0.0001){
                     correct = true;
+                }
+                else {
+                    correct = false;
                 }
             }
             if (correct) {

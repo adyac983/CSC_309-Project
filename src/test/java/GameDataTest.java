@@ -60,7 +60,7 @@ public class GameDataTest {
         GameData.getInstance().nextBuilding();
 
         GameData.getInstance().recalculate();
-        Assertions.assertEquals(player.getX(), buildingsList.get(1).getX()-50);
+        Assertions.assertEquals(player.getX(), GameData.getInstance().getCurrBuilding().getX()-50);
         Assertions.assertEquals(player.getY(),GameData.getInstance().getScrollPaneHeight()-100);
     }
 }
