@@ -15,6 +15,7 @@ public class BuildingPanel extends JPanel implements ActionListener{
     private static Timer timer;
     private static JLabel hpLabel;
     private static JLabel scoreLabel;
+    private static JLabel opponentScoreLabel;
 
 
     public BuildingPanel(List<Building> buildings) {
@@ -37,6 +38,14 @@ public class BuildingPanel extends JPanel implements ActionListener{
         scoreLabel.setFont(font2);
         scoreLabel.setBounds(350, 50, 200, 30);
         add(scoreLabel);
+
+        opponentScoreLabel = new JLabel("Opponent Score: 0");
+        opponentScoreLabel.setForeground(Color.RED);
+        Font font3 = new Font("Arial", Font.BOLD, 18);
+        opponentScoreLabel.setFont(font2);
+        opponentScoreLabel.setBounds(350, 50, 200, 30);
+        if (GameData.getInstance().getMultiplayer() == 0)
+            add(opponentScoreLabel);
     }
 
     void calculateDimensions() {
@@ -105,7 +114,7 @@ public class BuildingPanel extends JPanel implements ActionListener{
         }
 
         // Draw the player
-        Player player = GameData.getInstance().getPlayer();
+        Player player = GameData.getInstance().getCurrentPlayer();
         player.draw(g);
 
         // Draw buildings
@@ -188,8 +197,8 @@ public class BuildingPanel extends JPanel implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Player player = GameData.getInstance().getPlayer();
-        GameData.getInstance().getPlayer().moveTo(player.getX()+1, player.getY());
+        Player player = GameData.getInstance().getCurrentPlayer();
+        GameData.getInstance().getCurrentPlayer().moveTo(player.getX()+1, player.getY());
         repaint();
 
     }
@@ -202,8 +211,8 @@ public class BuildingPanel extends JPanel implements ActionListener{
         }
     }
     public static void changeHpLabelText() {
-        if (GameData.getInstance().getPlayer() != null) {
-            hpLabel.setText("HP: " + GameData.getInstance().getPlayer().getHp());
+        if (GameData.getInstance().getCurrentPlayer() != null) {
+            hpLabel.setText("HP: " + GameData.getInstance().getCurrentPlayer().getHp());
         }
     }
     public static List<Building> getBuildings(){ return buildings;}

@@ -13,10 +13,19 @@ public class HomeScreen extends JPanel {
         ChoicePanel choicePanel = new ChoicePanel();
 
         // Home Screen Panel
-        JPanel homePanel = new JPanel(new BorderLayout());
-        JButton playButton = new JButton("Play");
-        playButton.addActionListener(e -> cardLayout.show(mainPanel, "levelPanel"));
-        homePanel.add(playButton, BorderLayout.CENTER);
+        JPanel homePanel = new JPanel(new GridLayout(2, 1));
+        JButton playSingleButton = new JButton("Play Solo");
+        playSingleButton.addActionListener(e -> {
+            cardLayout.show(mainPanel, "levelPanel");
+            GameData.getInstance().setMultiplayer(1);
+        });
+        homePanel.add(playSingleButton);
+        JButton playMultiButton = new JButton("Play Multiplayer");
+        playMultiButton.addActionListener(e -> {
+            cardLayout.show(mainPanel, "levelPanel");
+            GameData.getInstance().setMultiplayer(0);
+        });
+        homePanel.add(playMultiButton);
 
         // Level Selection Panel
         JPanel levelPanel = new JPanel(new GridLayout(3, 1));

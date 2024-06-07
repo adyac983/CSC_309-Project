@@ -23,7 +23,7 @@ public class GameDataTest {
 
         Building firstBuilding = GameData.getInstance().getCurrBuilding();
         Player player = new Player(0,0);
-        GameData.getInstance().setPlayer(player);
+        GameData.getInstance().setSoloPlayer(player);
 
         GameData.getInstance().recalculate();
         Assertions.assertEquals((int)firstBuilding.getLength(), firstBuilding.getY());
@@ -54,7 +54,7 @@ public class GameDataTest {
 
         List<Building> buildingsList = GameData.getInstance().getBuildings();
         Player player = new Player(0,0);
-        GameData.getInstance().setPlayer(player);
+        GameData.getInstance().setSoloPlayer(player);
 
         GameData.getInstance().setResult(1);
         GameData.getInstance().nextBuilding();

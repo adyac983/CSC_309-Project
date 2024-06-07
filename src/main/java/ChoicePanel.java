@@ -46,6 +46,22 @@ class ChoicePanel extends JPanel {
     }
 
     private void handleButtonAction(int selectedSource) {
+        if (GameData.getInstance().getMultiplayer() == 1) {
+            newGame();
+        }
+        else {
+            startMultiPlayer();
+        }
+    }
+    public static int getChoice(){
+        return choice;
+    }
+
+    public void setLevelChoice(int i) {
+        levelchoice=i;
+    }
+    public static List<DataRecord> getDataRecord(){return dr;}
+    private void newGame() {
         dr = WebDataExtractor.extractWebTableData(choice);
         List<Building> buildings = BuildingParser.parseDataToBuildings(dr);
 
@@ -62,11 +78,10 @@ class ChoicePanel extends JPanel {
         scrollPane.setViewportView(buildingPanel);
         GameData.getInstance().setScrollPane(scrollPane);
         GameData.getInstance().setBuildings(buildings);
-
         Building firstBuilding = GameData.getInstance().getCurrBuilding();
         Player player = new Player(firstBuilding.getX(), frame.getHeight()-(int)firstBuilding.getLength()-100);
-        System.out.println("player x " + player.getX());
-        GameData.getInstance().setPlayer(player);
+        GameData.getInstance().setSoloPlayer(player);
+
         frame.add(scrollPane, BorderLayout.CENTER);
 
         // Feedback panel
@@ -76,12 +91,21 @@ class ChoicePanel extends JPanel {
         frame.add(feedbackPanel, BorderLayout.SOUTH);
         frame.setVisible(true);
     }
-    public static int getChoice(){
-        return choice;
-    }
+    private void startMultiPlayer() {
+        GameData.getInstance().reset();
 
-    public void setLevelChoice(int i) {
-        levelchoice=i;
+        dr = WebDataExtractor.extractWebTableData(choice);
+        List<Building> buildings = BuildingParser.parseDataToBuildings(dr);
+        GameData.getInstance().setBuildings(buildings);
+        Building firstBuilding = GameData.getInstance().getCurrBuilding();
+        Player player1 = new Player(firstBuilding.getX(), 600-(int)firstBuilding.getLength()-100);
+        Player player2 = new Player(firstBuilding.getX(), 600-(int)firstBuilding.getLength()-100);
+        GameData.getInstance().setServerPlayer(player1);
+        GameData.getInstance().setClientPlayer(player2);
+        //MultiplayerClient client = new MultiplayerClient();
+        MultiplayerServer server = new MultiplayerServer();
+        //client.simulateGame();
+        server.simulateGame();
+
     }
-    public static List<DataRecord> getDataRecord(){return dr;}
 }

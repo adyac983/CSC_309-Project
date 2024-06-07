@@ -4,8 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="special question added">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Equations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Equations.java" afterDir="false" />
+    <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="score added">
+      <change afterPath="$PROJECT_DIR$/src/main/java/MultiplayerClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MultiplayerData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MultiplayerServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BuildingPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BuildingPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ChoicePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChoicePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/HomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HomeScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GameDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GameDataTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BuildingPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BuildingPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BuildingPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BuildingPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ChoicePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChoicePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GameData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GameData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/HomeScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/HomeScreen.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +72,61 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager" selected="Application.singleplayer_main">
+    <configuration name="server_multiplayer" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="MultiplayerServer" />
+      <module name="CSC_309-Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="singleplayer_main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="CSC_309-Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="ComposePreviewRunConfiguration" nameIsGenerated="true">
+      <module name="CSC_309-Project" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="--es composable " />
+      <option name="MODE" value="specific_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <Java />
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="androidx.compose.ui.tooling.PreviewActivity" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="true" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <compose-preview-run-configuration composable-fqn="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.singleplayer_main" />
+      <item itemvalue="Application.server_multiplayer" />
+      <item itemvalue="Compose Preview.Unnamed" />
+    </list>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

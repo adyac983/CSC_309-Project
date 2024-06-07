@@ -5,7 +5,7 @@ import java.util.List;
 public class GameData extends PropertyChangeSupport {
     private static GameData instance;
     private List<Building> buildings;
-    private Player player;
+    private Player soloplayer;
     private int currBuilding = 0;
     private int numBuildings = 0;
     private JScrollPane sp = null;
@@ -13,6 +13,17 @@ public class GameData extends PropertyChangeSupport {
     private HomeScreen homeScreen;
     private JFrame frame;
     private int score = 0;
+    private Player currentPlayer = null;
+
+    //multiplayer
+    private int multiplayer = 1;
+    private int whoIAm = 0;
+    private int serverPlayerScore;
+    private int clientPlayerScore;
+    private Player serverPlayer;
+    private Player clientPlayer;
+    public static final int SERVER = 0;
+    public static final int CLIENT = 1;
 
     private GameData() {
         super(new Object());
@@ -23,8 +34,19 @@ public class GameData extends PropertyChangeSupport {
     public void setHomeScreen(HomeScreen s) {
         this.homeScreen = s;
     }
-    public void setPlayer(Player player) {
-        this.player = player;
+    public void setSoloPlayer(Player player) {
+        this.soloplayer = player;
+    }
+    public Player getCurrentPlayer() {
+        Player player;
+        if (multiplayer == 1)
+            player = soloplayer;
+        else if (whoIAm == GameData.CLIENT)
+            player = clientPlayer;
+        else
+            player = serverPlayer;
+        this.currentPlayer = player;
+        return player;
     }
     public void setBuildings(List<Building> bs) {
         this.buildings = bs;
@@ -43,13 +65,15 @@ public class GameData extends PropertyChangeSupport {
         return instance;
     }
     public Player getPlayer() {
-        return player;
+        return currentPlayer;
     }
     public int getScrollPaneHeight() {
         return sp.getViewport().getHeight();
     }
     public void recalculate() {
-        if (player.getHp() <= 0) {
+        Player player = getCurrentPlayer();
+
+        if (multiplayer == 1 && player.getHp() <= 0) {
             Gameover();
         }
 
@@ -128,5 +152,39 @@ public class GameData extends PropertyChangeSupport {
         this.score = 0;
         this.currBuilding = 0;
         this.result = 0;
+    }
+    public void setClientPlayerScore (int s) {
+        clientPlayerScore = s;
+    }
+
+    public void setServerPlayerScore(int s) {
+        serverPlayerScore = s;
+    }
+    public void setWhoIAm(int client) {
+        this.whoIAm = client;
+    }
+    public void setMultiplayer(int multiplayer) {
+        this.multiplayer = multiplayer;
+    }
+    public int getMultiplayer() {
+        return this.multiplayer;
+    }
+    public void setServerPlayer(Player p) {
+        this.serverPlayer = p;
+    }
+    public void setClientPlayer(Player p ) {
+        this.clientPlayer = p;
+    }
+
+    public int getServerPlayerScore() {
+        return serverPlayerScore;
+    }
+
+    public int getClientPlayerScore() {
+        return clientPlayerScore;
+    }
+
+    public int getWhoIAm() {
+        return whoIAm;
     }
 }
