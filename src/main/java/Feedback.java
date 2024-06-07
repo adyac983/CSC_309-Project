@@ -9,6 +9,7 @@ public class Feedback extends JPanel {
     private int currentEquation = 1;
     private int hintStep = 1;
     private int levelChoice;
+    private Boolean correct = false;
 
     public Feedback(int level) {
         setLayout(new FlowLayout());
@@ -57,10 +58,23 @@ public class Feedback extends JPanel {
         JOptionPane.showMessageDialog(this, s);
     }
     private void checkAnswer() {
+
         try {
-            double userAnswer = Double.parseDouble(answerField.getText());
-            double correctAnswer = Equations.getAnswer(currentEquation, levelChoice);
-            if (Math.abs(userAnswer - correctAnswer) < 0.0001) {
+            if(currentEquation%10 == 0){
+                String userAns = answerField.getText();
+                String corrAns = Equations.getAnswer(currentEquation, levelChoice);
+                if (userAns.equals(corrAns)){
+                    correct = true;
+                }
+            }
+            else{
+                double userAnswer = Double.parseDouble(answerField.getText());
+                double correctAnswer = Double.valueOf(Equations.getAnswer(currentEquation, levelChoice));
+                if(Math.abs(userAnswer - correctAnswer) < 0.0001){
+                    correct = true;
+                }
+            }
+            if (correct) {
                 //correct answer
                 JOptionPane.showMessageDialog(this, "Correct!");
                 GameData.getInstance().setResult(0);
@@ -76,7 +90,7 @@ public class Feedback extends JPanel {
                 GameData.getInstance().recalculate();
                 GameData.getInstance().getSp().getViewport().repaint();
             } else {
-                JOptionPane.showMessageDialog(this, "Incorrect! The correct answer is: " + correctAnswer);
+                JOptionPane.showMessageDialog(this, "Incorrect! The correct answer is: " + Double.valueOf(Equations.getAnswer(currentEquation, levelChoice)));
                 GameData.getInstance().setResult(1);
                 GameData.getInstance().getPlayer().setHp(GameData.getInstance().getPlayer().getHp()-1);
                 GameData.getInstance().recalculate();
@@ -84,8 +98,8 @@ public class Feedback extends JPanel {
             }
             currentEquation++;
             hintStep = 1;
-            if (currentEquation > 8)
-                currentEquation = 1;
+            //if (currentEquation > 8)
+             //   currentEquation = 1;
             equationLabel.setText("Equation: " + Equations.getEquation(currentEquation, levelChoice));
             answerField.setText("");
         } catch (NumberFormatException ex) {

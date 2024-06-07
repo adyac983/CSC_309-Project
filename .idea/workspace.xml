@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="game over screen added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BuildingPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BuildingPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ChoicePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChoicePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Feedback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GameData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GameData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Player.class" afterDir="false" />
+    <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="special question added">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Equations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Equations.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,12 +203,13 @@
       <option name="project" value="LOCAL" />
       <updated>1716576769838</updated>
     </task>
-    <task id="LOCAL-00016" summary="game over screen added">
-      <created>1716591178310</created>
+    <task id="LOCAL-00016" summary="special question added">
+      <option name="closed" value="true" />
+      <created>1717624158220</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1716591178310</updated>
+      <updated>1717624158220</updated>
     </task>
     <option name="localTasksCounter" value="17" />
     <servers />
@@ -246,6 +240,8 @@
     <MESSAGE value="added hp label" />
     <MESSAGE value="player movement done" />
     <MESSAGE value="game over screen added" />
-    <option name="LAST_COMMIT_MESSAGE" value="game over screen added" />
+    <MESSAGE value="score added" />
+    <MESSAGE value="special question added" />
+    <option name="LAST_COMMIT_MESSAGE" value="special question added" />
   </component>
 </project>

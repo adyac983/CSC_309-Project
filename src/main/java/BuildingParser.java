@@ -17,7 +17,6 @@ public class BuildingParser {
             else{
                 number = Double.parseDouble(record.getNum());
             }
-
             if(ChoicePanel.getChoice() == 1){
                 length = number * 5.0;
             }
@@ -35,20 +34,14 @@ public class BuildingParser {
                     length = number/10;
                 }
             }
-
             if(length > 700){
                 length = 650;
             }
-
-
             int breadth = 150;
-
-
-            buildings.add(new Building(length, breadth));
+            String c = record.getCountry();
+            buildings.add(new Building(length, breadth, c));
         }
         Collections.shuffle(buildings);
-
         return buildings;
     }
-
 }
