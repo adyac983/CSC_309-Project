@@ -5,11 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="multiplayer half done">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Feedback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Feedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Feedback.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Building.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BuildingPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BuildingParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ChoicePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataRecord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Equations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Feedback.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hints.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/HomeScreen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MultiplayerClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MultiplayerServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Solution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebDataExtractor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/EquationsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/EquationsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GameDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GameDataTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Building.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BuildingPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BuildingPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BuildingParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ChoicePanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ChoicePanel$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ChoicePanel$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ChoicePanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Equations.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Feedback$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Feedback$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Feedback$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Feedback.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GameData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Hints.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/HomeScreen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Solution.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WebDataExtractor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/EquationsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/EquationsTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GameDataTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GameDataTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/classpath.index" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,8 +98,8 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -68,7 +108,7 @@
       <recent name="C:\Users\yuddu\OneDrive\Documents\GitHub\CSC_309-Project" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.gamedatatest">
+  <component name="RunManager" selected="Docker.CSC_309-Project_dockerfile">
     <configuration name="server_multiplayer" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="MultiplayerServer" />
       <module name="CSC_309-Project" />
@@ -77,7 +117,9 @@
       </method>
     </configuration>
     <configuration name="singleplayer_main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="mathleap.MainGame" />
       <module name="CSC_309-Project" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -127,6 +169,67 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CSC_309-Project [clean,compile]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="compile" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="CSC_309-Project [package]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="Remote" nameIsGenerated="true">
+      <module name="CSC_309-Project" />
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <option name="AUTO_RESTART" value="false" />
+      <method v="2" />
+    </configuration>
     <configuration name="CSC_309-Project_dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
@@ -143,6 +246,9 @@
       <item itemvalue="Compose Preview.Unnamed" />
       <item itemvalue="Docker.CSC_309-Project_dockerfile" />
       <item itemvalue="JUnit.gamedatatest" />
+      <item itemvalue="Maven.CSC_309-Project [clean,compile]" />
+      <item itemvalue="Maven.CSC_309-Project [package]" />
+      <item itemvalue="Remote JVM Debug.Unnamed" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -305,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717751043907</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="multiplayer half done">
+      <created>1717795984128</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1717795984128</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
