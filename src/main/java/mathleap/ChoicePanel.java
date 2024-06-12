@@ -11,6 +11,10 @@ class ChoicePanel extends JPanel {
     private JFrame frame;
     private int levelchoice;
     private static List<DataRecord> dr;
+    private static JLabel hpLabel;
+    private static JLabel scoreLabel;
+
+    private static JLabel opponentScoreLabel;
     public ChoicePanel() {
         setLayout(new GridLayout(3, 1));
 
@@ -45,24 +49,29 @@ class ChoicePanel extends JPanel {
         add(button1);
         add(button2);
         add(button3);
+
+
     }
 
     private void handleButtonAction(int selectedSource) {
         if (GameData.getInstance().getMultiplayer() == 1) {
             newGame();
-        }
-        else {
+        } else {
             startMultiPlayer();
         }
     }
-    public static int getChoice(){
+
+    public static int getChoice() {
         return choice;
     }
 
     public void setLevelChoice(int i) {
-        levelchoice=i;
+        levelchoice = i;
     }
-    public static List<DataRecord> getDataRecord(){return dr;}
+
+    public static List<DataRecord> getDataRecord() {
+        return dr;
+    }
     private void newGame() {
         dr = WebDataExtractor.extractWebTableData(choice);
         List<Building> buildings = BuildingParser.parseDataToBuildings(dr);
@@ -92,6 +101,27 @@ class ChoicePanel extends JPanel {
         feedbackPanel.add(feedback, BorderLayout.SOUTH);
         frame.add(feedbackPanel, BorderLayout.SOUTH);
         frame.setVisible(true);
+
+        // Create HP and Score panel
+        JPanel hpScorePanel = new JPanel(new GridLayout(1, 1));
+        hpLabel = new JLabel("HP: ");
+        scoreLabel = new JLabel("Score: 0");
+        opponentScoreLabel = new JLabel("Opponent Score: 0");
+
+        hpLabel.setForeground(Color.RED);
+        opponentScoreLabel.setForeground(Color.RED);
+        scoreLabel.setForeground(Color.RED);
+        hpScorePanel.add(hpLabel);
+        hpScorePanel.add(scoreLabel);
+
+        if (GameData.getInstance().getMultiplayer() == 0)
+            add(opponentScoreLabel);
+
+        frame.add(hpScorePanel, BorderLayout.NORTH);
+        frame.setVisible(true);
+
+        changeHpLabelText();
+        changeScoreLabelText();
     }
     private void startMultiPlayer() {
         GameData.getInstance().reset();
@@ -109,5 +139,16 @@ class ChoicePanel extends JPanel {
         //client.simulateGame();
         server.simulateGame();
 
+    }
+
+    public static void changeHpLabelText() {
+        if (GameData.getInstance().getCurrentPlayer() != null) {
+            hpLabel.setText("HP: " + GameData.getInstance().getCurrentPlayer().getHp());
+        }
+    }
+
+    // Method to update Score label text
+    public static void changeScoreLabelText() {
+        scoreLabel.setText("Score: " + GameData.getInstance().getScore());
     }
 }

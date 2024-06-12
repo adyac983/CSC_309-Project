@@ -15,9 +15,7 @@ public class BuildingPanel extends JPanel implements ActionListener{
 
     private JComboBox<String> backgroundSelector;
     private static Timer timer;
-    private static JLabel hpLabel;
-    private static JLabel scoreLabel;
-    private static JLabel opponentScoreLabel;
+
 
 
     public BuildingPanel(List<Building> buildings) {
@@ -27,27 +25,7 @@ public class BuildingPanel extends JPanel implements ActionListener{
         loadDefaultBackgroundImage();
         this.timer = new Timer(50,this);
         timer.start();
-        hpLabel = new JLabel("HP: ");
-        hpLabel.setForeground(Color.RED);
-        Font font = new Font("Arial", Font.BOLD, 18);
-        hpLabel.setFont(font);
-        hpLabel.setBounds(50, 50, 200, 30);
-        add(hpLabel);
 
-        scoreLabel = new JLabel("Score: 0");
-        scoreLabel.setForeground(Color.RED);
-        Font font2 = new Font("Arial", Font.BOLD, 18);
-        scoreLabel.setFont(font2);
-        scoreLabel.setBounds(350, 50, 200, 30);
-        add(scoreLabel);
-
-        opponentScoreLabel = new JLabel("Opponent Score: 0");
-        opponentScoreLabel.setForeground(Color.RED);
-        Font font3 = new Font("Arial", Font.BOLD, 18);
-        opponentScoreLabel.setFont(font2);
-        opponentScoreLabel.setBounds(350, 50, 200, 30);
-        if (GameData.getInstance().getMultiplayer() == 0)
-            add(opponentScoreLabel);
     }
 
     void calculateDimensions() {
@@ -58,6 +36,9 @@ public class BuildingPanel extends JPanel implements ActionListener{
             }
         }
     }
+
+
+
 
 
 
@@ -212,13 +193,5 @@ public class BuildingPanel extends JPanel implements ActionListener{
             timer.start();
         }
     }
-    public static void changeHpLabelText() {
-        if (GameData.getInstance().getCurrentPlayer() != null) {
-            hpLabel.setText("HP: " + GameData.getInstance().getCurrentPlayer().getHp());
-        }
-    }
-    public static List<Building> getBuildings(){ return buildings;}
-    public static void changeScoreLabelText() {
-        scoreLabel.setText("Score: " + GameData.getInstance().getScore());
-    }
+
 }

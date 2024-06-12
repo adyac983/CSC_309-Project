@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.beans.PropertyChangeSupport;
 import java.util.List;
+
 public class GameData extends PropertyChangeSupport {
     private static GameData instance;
     private List<Building> buildings;
@@ -17,7 +18,7 @@ public class GameData extends PropertyChangeSupport {
     private int score = 0;
     private Player currentPlayer = null;
 
-    //multiplayer
+    // Multiplayer
     private int multiplayer = 1;
     private int whoIAm = 0;
     private int serverPlayerScore;
@@ -27,18 +28,28 @@ public class GameData extends PropertyChangeSupport {
     public static final int SERVER = 0;
     public static final int CLIENT = 1;
 
+    private Timer smoothScrollTimer;
+    private Point targetPosition;
+    private Point startPosition;
+    private int scrollDuration = 500; // Duration of the scroll in milliseconds
+    private long startTime;
+
     private GameData() {
         super(new Object());
     }
+
     public void setFrame(JFrame frame) {
         this.frame = frame;
     }
+
     public void setHomeScreen(HomeScreen s) {
         this.homeScreen = s;
     }
+
     public void setSoloPlayer(Player player) {
         this.soloplayer = player;
     }
+
     public Player getCurrentPlayer() {
         Player player;
         if (multiplayer == 1)
@@ -50,28 +61,35 @@ public class GameData extends PropertyChangeSupport {
         this.currentPlayer = player;
         return player;
     }
+
     public void setBuildings(List<Building> bs) {
         this.buildings = bs;
         this.numBuildings = bs.size();
     }
+
     public void setScrollPane(JScrollPane s) {
         this.sp = s;
     }
+
     public JScrollPane getSp() {
         return sp;
     }
+
     public static GameData getInstance() {
         if (instance == null) {
             instance = new GameData();
         }
         return instance;
     }
+
     public Player getPlayer() {
         return currentPlayer;
     }
+
     public int getScrollPaneHeight() {
         return sp.getViewport().getHeight();
     }
+
     public void recalculate() {
         Player player = getCurrentPlayer();
 
@@ -92,21 +110,20 @@ public class GameData extends PropertyChangeSupport {
 
         // Update UI and check player position
         if (player != null) {
-            BuildingPanel.changeHpLabelText();
+            ChoicePanel.changeHpLabelText();
             Building curr = getCurrBuilding();
             if (curr.getX() + 150 < player.getX() + 20) { // player took too long to answer
                 result = 1;
                 player.setHp(player.getHp() - 1);
-                BuildingPanel.changeHpLabelText();
+                ChoicePanel.changeHpLabelText();
             }
-
 
             if (result == 0) { // default or player answered correctly
                 player.moveTo(player.getX(), getScrollPaneHeight() - curr.getY() - 100);
                 BuildingPanel.startTimer();
                 int scrollToX = curr.getX() - 50;
                 int scrollToY = 0;
-                sp.getViewport().setViewPosition(new Point(scrollToX, scrollToY));
+                smoothScrollTo(scrollToX, scrollToY);
             } else {
                 if (player.getY() != getScrollPaneHeight() - 100) { // move player to bottom of next building
                     nextBuilding();
@@ -115,66 +132,103 @@ public class GameData extends PropertyChangeSupport {
                 player.moveTo(curr.getX() - 50, getScrollPaneHeight() - 100);
                 BuildingPanel.stopTimer();
 
-
                 int scrollToX = curr.getX() - 50;
                 int scrollToY = 0;
-                sp.getViewport().setViewPosition(new Point(scrollToX, scrollToY));
+                smoothScrollTo(scrollToX, scrollToY);
             }
         }
     }
 
+    private void smoothScrollTo(int targetX, int targetY) {
+        targetPosition = new Point(targetX, targetY);
+        startPosition = sp.getViewport().getViewPosition();
+        startTime = System.currentTimeMillis();
+
+        if (smoothScrollTimer != null && smoothScrollTimer.isRunning()) {
+            smoothScrollTimer.stop();
+        }
+
+        smoothScrollTimer = new Timer(20, e -> {
+            long elapsedTime = System.currentTimeMillis() - startTime;
+            float progress = (float) elapsedTime / scrollDuration;
+            if (progress > 1f) progress = 1f;
+
+            int newX = startPosition.x + Math.round(progress * (targetPosition.x - startPosition.x));
+            int newY = startPosition.y + Math.round(progress * (targetPosition.y - startPosition.y));
+            sp.getViewport().setViewPosition(new Point(newX, newY));
+
+            if (progress >= 1f) {
+                smoothScrollTimer.stop();
+            }
+        });
+
+        smoothScrollTimer.start();
+    }
 
     public void setResult(int r) {
         this.result = r;
     }
+
     public List<Building> getBuildings() {
         return buildings;
     }
+
     public void nextBuilding() {
         this.currBuilding += 1;
     }
+
     public Building getCurrBuilding() {
         if (buildings.isEmpty()) {
             return null;
         }
         return buildings.get(currBuilding);
     }
+
     public void Gameover() {
         BuildingPanel.stopTimer();
         homeScreen.GameOver();
         frame.dispose();
     }
+
     public int getScore() {
         return score;
     }
+
     public void setScore(int s) {
         this.score = s;
     }
+
     public void reset() {
         this.score = 0;
         this.currBuilding = 0;
         this.result = 0;
     }
-    public void setClientPlayerScore (int s) {
+
+    public void setClientPlayerScore(int s) {
         clientPlayerScore = s;
     }
 
     public void setServerPlayerScore(int s) {
         serverPlayerScore = s;
     }
+
     public void setWhoIAm(int client) {
         this.whoIAm = client;
     }
+
     public void setMultiplayer(int multiplayer) {
         this.multiplayer = multiplayer;
     }
+
     public int getMultiplayer() {
         return this.multiplayer;
     }
+
     public void setServerPlayer(Player p) {
         this.serverPlayer = p;
     }
-    public void setClientPlayer(Player p ) {
+
+    public void setClientPlayer(Player p) {
         this.clientPlayer = p;
     }
 
