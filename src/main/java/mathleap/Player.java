@@ -1,11 +1,12 @@
 package mathleap;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import javax.imageio.ImageIO;
 
-public class Player{
+public class Player {
     private int x;
     private int y;
     private Image image;
@@ -13,35 +14,55 @@ public class Player{
 
     public Player(int x, int y) {
         this.x = x;
-        this. y = y;
+        this.y = y;
         this.hp = 3;
+    }
 
+    private Image loadImageFromFile(String fileName) {
+        Image img = null;
         try {
-            URL url = getClass().getResource("/images/boy.png");
+            URL url = getClass().getResource("/images/" + fileName);
             if (url != null) {
-                this.image = ImageIO.read(url);
-                this.image = this.image.getScaledInstance(50, 100, Image.SCALE_SMOOTH);
+                img = ImageIO.read(url);
             } else {
-                System.out.println("Image not found: player.png");
+                System.err.println("Resource not found: /images/" + fileName);
             }
-        } catch (IOException ex) {
-            ex.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return img;
+    }
+
+
+    public void setImage(String fileName) {
+        Image img = loadImageFromFile(fileName);
+        if (img != null) {
+            this.image = img.getScaledInstance(50, 100, Image.SCALE_SMOOTH);
+        } else {
+            System.err.println("Failed to load image: " + fileName);
         }
     }
-    public void draw(Graphics g) {
 
+    public void setImage(Image image) {
+        this.image = image.getScaledInstance(50, 100, Image.SCALE_SMOOTH);
+    }
+
+    public void draw(Graphics g) {
         if (image != null) {
             g.drawImage(image, x, y, null);
         } else {
             g.fillRect(x, y, 50, 100); // Default rectangle if image not found
         }
     }
+
     public int getX() {
         return this.x;
     }
+
     public int getY() {
         return this.y;
     }
+
     public void moveTo(int x, int y) {
         this.x = x;
         this.y = y;

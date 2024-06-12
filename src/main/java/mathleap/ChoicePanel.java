@@ -15,7 +15,11 @@ class ChoicePanel extends JPanel {
     private static JLabel scoreLabel;
 
     private static JLabel opponentScoreLabel;
-    public ChoicePanel() {
+
+    private String playerchoice;
+    public ChoicePanel(String player) {
+
+        this.playerchoice= player;
         setLayout(new GridLayout(3, 1));
 
         JButton button1 = new JButton("Air Pollution");
@@ -99,6 +103,21 @@ class ChoicePanel extends JPanel {
         GameData.getInstance().setBuildings(buildings);
         Building firstBuilding = GameData.getInstance().getCurrBuilding();
         Player player = new Player(firstBuilding.getX(), frame.getHeight()-(int)firstBuilding.getLength()-100);
+        if (playerchoice=="boy"){
+            player.setImage("boy.png");
+        }
+        else if (playerchoice=="girl"){
+            player.setImage("girl.png");
+        }
+        else if (playerchoice=="nezuko"){
+            player.setImage("nezuko.png");
+        }
+        else if (playerchoice=="pikachu"){
+            player.setImage("pikachu.png");
+        }
+        else if (playerchoice=="amongus"){
+            player.setImage("amongus.png");
+        }
         GameData.getInstance().setSoloPlayer(player);
 
         frame.add(scrollPane, BorderLayout.CENTER);
