@@ -11,7 +11,7 @@ import javax.imageio.ImageIO;
 public class PlayerPanel extends JPanel {
     private String selectedPlayerName;
     private Image[] playerImages;
-    private String[] playerNames = {"boy", "amongus", "girl", "nezuko", "pikachu", "dinosaur"};
+    private String[] playerNames = {"boy", "amongus", "girl", "nezuko", "pikachu", "dinosaur","gojo"};
     private int playerCount = playerNames.length;
     private int imageWidth = 50;
     private int imageHeight = 100;

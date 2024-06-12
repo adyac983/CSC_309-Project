@@ -4,9 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="docker">
+    <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="special question added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mathleap/BuildingPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mathleap/BuildingPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mathleap/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mathleap/Feedback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/BuildingPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/BuildingPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/BuildingPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/BuildingPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/ChoicePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/ChoicePanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/ChoicePanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/ChoicePanel$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/ChoicePanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/ChoicePanel$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/ChoicePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/ChoicePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/Feedback$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/Feedback$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/Feedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/Feedback.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/GameData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/GameData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/HomeScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/HomeScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/MultiplayerClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/MultiplayerClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/MultiplayerServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/MultiplayerServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/Player.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,174 +54,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Equations.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/yuddu/OneDrive/Documents/GitHub/CSC_309-Project/Dockerfile&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Equations.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.MainGame.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\yuddu\OneDrive\Documents\GitHub\CSC_309-Project" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Docker.CSC_309-Project_dockerfile">
-    <configuration name="server_multiplayer" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="MultiplayerServer" />
-      <module name="CSC_309-Project" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="singleplayer_main" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="19" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="mathleap.MainGame" />
-      <module name="CSC_309-Project" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Unnamed" type="ComposePreviewRunConfiguration" nameIsGenerated="true">
-      <module name="CSC_309-Project" />
-      <option name="DEPLOY" value="true" />
-      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
-      <option name="DEPLOY_AS_INSTANT" value="false" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ALL_USERS" value="false" />
-      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
-      <option name="CLEAR_APP_STORAGE" value="false" />
-      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="--es composable " />
-      <option name="MODE" value="specific_activity" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="DEBUGGER_TYPE" value="Java" />
-      <Java />
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
-        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
-        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="androidx.compose.ui.tooling.PreviewActivity" />
-      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="true" />
-      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
-      <compose-preview-run-configuration composable-fqn="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="gamedatatest" type="JUnit" factoryName="JUnit">
-      <module name="CSC_309-Project" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GameDataTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CSC_309-Project [clean,compile]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="clean" />
-                <option value="compile" />
-              </list>
-            </option>
-            <option name="pomFileName" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
-    </configuration>
-    <configuration name="CSC_309-Project [package]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="package" />
-              </list>
-            </option>
-            <option name="pomFileName" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
-    </configuration>
-    <configuration name="Unnamed" type="Remote" nameIsGenerated="true">
-      <module name="CSC_309-Project" />
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <option name="AUTO_RESTART" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration name="CSC_309-Project_dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="imageTag" value="csc309project" />
-          <option name="containerName" value="csc309Project" />
-          <option name="sourceFilePath" value="Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Application.singleplayer_main" />
-      <item itemvalue="Application.server_multiplayer" />
-      <item itemvalue="Compose Preview.Unnamed" />
-      <item itemvalue="Docker.CSC_309-Project_dockerfile" />
-      <item itemvalue="JUnit.gamedatatest" />
-      <item itemvalue="Maven.CSC_309-Project [clean,compile]" />
-      <item itemvalue="Maven.CSC_309-Project [package]" />
-      <item itemvalue="Remote JVM Debug.Unnamed" />
-    </list>
-  </component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -361,35 +227,7 @@
       <option name="project" value="LOCAL" />
       <updated>1717624158220</updated>
     </task>
-    <task id="LOCAL-00017" summary="multiplayer half done">
-      <created>1717751043907</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1717751043907</updated>
-    </task>
-    <task id="LOCAL-00018" summary="multiplayer half done">
-      <created>1717795984128</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1717795984128</updated>
-    </task>
-    <task id="LOCAL-00019" summary="docker">
-      <created>1717919578540</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1717919578540</updated>
-    </task>
-    <task id="LOCAL-00020" summary="docker">
-      <created>1717919699086</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1717919699086</updated>
-    </task>
-    <option name="localTasksCounter" value="21" />
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -420,8 +258,6 @@
     <MESSAGE value="game over screen added" />
     <MESSAGE value="score added" />
     <MESSAGE value="special question added" />
-    <MESSAGE value="multiplayer half done" />
-    <MESSAGE value="docker" />
-    <option name="LAST_COMMIT_MESSAGE" value="docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="special question added" />
   </component>
 </project>

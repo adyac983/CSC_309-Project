@@ -161,8 +161,8 @@ public class BuildingPanel extends JPanel implements ActionListener{
             // Draw building information
             g.setColor(Color.RED);
             g.drawString(building.getCountry(), building.getX() + 10, scrollPaneHeight - height - 20);
-            g.drawString("Length: " + building.getLength(), building.getX() + 10, scrollPaneHeight - height);
-            g.drawString("Breadth: " + building.getBreadth(), building.getX() + 10, scrollPaneHeight - height + 20);
+            //g.drawString("Length: " + building.getLength(), building.getX() + 10, scrollPaneHeight - height);
+            //g.drawString("Breadth: " + building.getBreadth(), building.getX() + 10, scrollPaneHeight - height + 20);
 
 
             //String equation = Equations.getEquation(building.getX() / (building.getBreadth() + 70) + 1);

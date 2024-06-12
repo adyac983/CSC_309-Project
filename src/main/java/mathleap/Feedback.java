@@ -36,24 +36,6 @@ public class Feedback extends JPanel {
             }
         });
         add(submitButton);
-
-        JButton hintButton = new JButton("Hint");
-        hintButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                showHint();
-            }
-        });
-        add(hintButton);
-
-        JButton solButton = new JButton("Solution");
-        solButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                showSolutions();
-            }
-        });
-        add(solButton);
     }
     private void showSolutions(){
         String s = Solution.getSolution(Equations.getEquation(currentEquation, levelChoice));
@@ -103,6 +85,28 @@ public class Feedback extends JPanel {
                 GameData.getInstance().getPlayer().setHp(GameData.getInstance().getPlayer().getHp()-1);
                 GameData.getInstance().recalculate();
                 GameData.getInstance().getSp().getViewport().repaint();
+            }
+            JButton hintButton = new JButton("Hint");
+            hintButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    showHint();
+                }
+            });
+            //hints feature is only available after you're score is greater than 7
+            if ( GameData.getInstance().getScore() > 7){
+                add(hintButton);
+            }
+            JButton solButton = new JButton("Solution");
+            solButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    showSolutions();
+                }
+            });
+            //solution button is only accessible if score is more than 5 and health is less than 2
+            if (GameData.getInstance().getPlayer().getHp() < 2){
+                add(solButton);
             }
             currentEquation++;
             hintStep = 1;
