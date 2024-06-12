@@ -118,6 +118,9 @@ class ChoicePanel extends JPanel {
         else if (playerchoice=="amongus"){
             player.setImage("amongus.png");
         }
+        else if (playerchoice=="dinosaur"){
+            player.setImage("dinosaur.png");
+        }
         GameData.getInstance().setSoloPlayer(player);
 
         frame.add(scrollPane, BorderLayout.CENTER);
