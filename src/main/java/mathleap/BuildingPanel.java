@@ -16,13 +16,17 @@ public class BuildingPanel extends JPanel implements ActionListener{
     private JComboBox<String> backgroundSelector;
     private static Timer timer;
 
+    private String theme;
 
 
-    public BuildingPanel(List<Building> buildings) {
+
+
+
+    public BuildingPanel(List<Building> buildings,String theme) {
         this.buildings = buildings;
         calculateDimensions();
         setupBackgroundSelector();
-        loadDefaultBackgroundImage();
+        loadBackgroundImage(theme);
         this.timer = new Timer(50,this);
         timer.start();
 

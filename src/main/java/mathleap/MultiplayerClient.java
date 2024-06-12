@@ -8,7 +8,7 @@ public class MultiplayerClient extends JFrame implements MqttCallback {
 
     public MultiplayerClient() {
         setLayout(new GridLayout(1, 1));
-        BuildingPanel buildingPanel = new BuildingPanel(GameData.getInstance().getBuildings());
+        BuildingPanel buildingPanel = new BuildingPanel(GameData.getInstance().getBuildings(),"city");
         add(buildingPanel);
         JScrollPane scrollPane = new JScrollPane(buildingPanel);
         scrollPane.setViewportView(buildingPanel);

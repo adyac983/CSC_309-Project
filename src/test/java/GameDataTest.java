@@ -16,7 +16,7 @@ public class GameDataTest {
     void testGameData() {
         java.util.List<DataRecord> dataRecords = WebDataExtractor.extractWebTableData(1);
         List<Building> buildings = BuildingParser.parseDataToBuildings(dataRecords);
-        BuildingPanel buildingPanel = new BuildingPanel(buildings);
+        BuildingPanel buildingPanel = new BuildingPanel(buildings,"city");
         JScrollPane scrollPane = new JScrollPane(buildingPanel);
         scrollPane.setViewportView(buildingPanel);
         GameData.getInstance().setScrollPane(scrollPane);
@@ -33,7 +33,7 @@ public class GameDataTest {
     @Test
     void testGameDataNoBuildings() {
         List<Building> buildings = new ArrayList<>();
-        BuildingPanel buildingPanel = new BuildingPanel(buildings);
+        BuildingPanel buildingPanel = new BuildingPanel(buildings,"city");
         JScrollPane scrollPane = new JScrollPane(buildingPanel);
         scrollPane.setViewportView(buildingPanel);
         GameData.getInstance().setScrollPane(scrollPane);
@@ -47,7 +47,7 @@ public class GameDataTest {
     void testGameDataBoyCrashed() {
         java.util.List<DataRecord> dataRecords = WebDataExtractor.extractWebTableData(1);
         List<Building> buildings = BuildingParser.parseDataToBuildings(dataRecords);
-        BuildingPanel buildingPanel = new BuildingPanel(buildings);
+        BuildingPanel buildingPanel = new BuildingPanel(buildings,"city");
         JScrollPane scrollPane = new JScrollPane(buildingPanel);
         scrollPane.setViewportView(buildingPanel);
         GameData.getInstance().setScrollPane(scrollPane);

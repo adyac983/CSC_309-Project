@@ -55,7 +55,15 @@ class ChoicePanel extends JPanel {
 
     private void handleButtonAction(int selectedSource) {
         if (GameData.getInstance().getMultiplayer() == 1) {
-            newGame();
+            if (selectedSource == 1) {
+                newGame("city");
+            }
+            if (selectedSource == 2) {
+                newGame("co2");
+            }
+            if (selectedSource == 3) {
+                newGame("forest");
+            }
         } else {
             startMultiPlayer();
         }
@@ -72,7 +80,7 @@ class ChoicePanel extends JPanel {
     public static List<DataRecord> getDataRecord() {
         return dr;
     }
-    private void newGame() {
+    private void newGame(String theme) {
         dr = WebDataExtractor.extractWebTableData(choice);
         List<Building> buildings = BuildingParser.parseDataToBuildings(dr);
 
@@ -84,7 +92,7 @@ class ChoicePanel extends JPanel {
         GameData.getInstance().reset();
 
         GameData.getInstance().setFrame(frame);
-        BuildingPanel buildingPanel = new BuildingPanel(buildings);
+        BuildingPanel buildingPanel = new BuildingPanel(buildings, theme);
         JScrollPane scrollPane = new JScrollPane(buildingPanel);
         scrollPane.setViewportView(buildingPanel);
         GameData.getInstance().setScrollPane(scrollPane);

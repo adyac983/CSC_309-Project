@@ -10,7 +10,7 @@ public class MultiplayerServer extends JFrame implements MqttCallback {
 
     public MultiplayerServer() {
         setLayout(new GridLayout(1, 1));
-        buildingPanel = new BuildingPanel(GameData.getInstance().getBuildings());
+        buildingPanel = new BuildingPanel(GameData.getInstance().getBuildings(),"city");
         add(buildingPanel);
     }
 
