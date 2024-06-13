@@ -1,3 +1,7 @@
+/*
+    authors: Safwan and Yud
+    class purpose: draws the background(s) as well as the buildings
+ */
 package mathleap;
 
 import java.awt.*;
