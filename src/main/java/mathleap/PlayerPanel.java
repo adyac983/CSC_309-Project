@@ -1,3 +1,8 @@
+/*
+    author: Safwan Muntasir
+    class description: PlayerPlanel displays a player selection panel at
+    the beginning of the game where the user can select from a variety of characters
+ */
 package mathleap;
 
 import javax.swing.*;
@@ -7,6 +12,7 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import javax.imageio.ImageIO;
+
 
 public class PlayerPanel extends JPanel {
     private String selectedPlayerName;
