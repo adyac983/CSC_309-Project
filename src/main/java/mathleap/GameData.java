@@ -36,6 +36,8 @@ public class GameData extends PropertyChangeSupport {
     private JLabel scoreLabel;
 
     private JLabel opponentScoreLabel;
+    private int serverPlayerHp = 3;
+    private int clientPlayerHp = 3;
 
     private GameData() {
         super(new Object());
@@ -194,6 +196,8 @@ public class GameData extends PropertyChangeSupport {
         this.result = 0;
         this.serverPlayerScore = 0;
         this.clientPlayerScore = 0;
+        this.clientPlayerHp = 3;
+        this.serverPlayerHp = 3;
     }
 
     public void setClientPlayerScore(int s) {
@@ -274,5 +278,21 @@ public class GameData extends PropertyChangeSupport {
 
     public void setOpponentScoreLabel(JLabel opponentScoreLabel) {
         this.opponentScoreLabel = opponentScoreLabel;
+    }
+
+    public int getServerPlayerHp() {
+        return serverPlayerHp;
+    }
+
+    public void setServerPlayerHp(int serverPlayerHp) {
+        this.serverPlayerHp = serverPlayerHp;
+    }
+
+    public int getClientPlayerHp() {
+        return clientPlayerHp;
+    }
+
+    public void setClientPlayerHp(int clientPlayerHp) {
+        this.clientPlayerHp = clientPlayerHp;
     }
 }

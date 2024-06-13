@@ -4,33 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="docker">
+    <list default="true" id="b943e651-c43d-44e3-ab73-cb102db613e4" name="Changes" comment="multiplayer changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASU-subscriber-tcptestmosquittoorg1883/s-158.msg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mathleap/BuildingPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mathleap/BuildingPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mathleap/ChoicePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mathleap/ChoicePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mathleap/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mathleap/Feedback.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mathleap/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mathleap/GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mathleap/HomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mathleap/HomeScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mathleap/MainGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mathleap/MainGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mathleap/MultiplayerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mathleap/MultiplayerClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mathleap/MultiplayerServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mathleap/MultiplayerServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mathleap/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mathleap/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/BuildingPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/BuildingPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/BuildingPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/BuildingPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/ChoicePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/ChoicePanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/ChoicePanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/ChoicePanel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/ChoicePanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/ChoicePanel$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mathleap/ChoicePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/ChoicePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/Feedback$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/Feedback$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/Feedback$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/Feedback$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/Feedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/Feedback.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/GameData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/GameData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/HomeScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/HomeScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/MainGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/MainGame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mathleap/MultiplayerClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/MultiplayerClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mathleap/MultiplayerServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/MultiplayerServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mathleap/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mathleap/Player.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717624158220</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="multiplayer changes">
+      <created>1718252402442</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1718252402442</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,6 +268,7 @@
     <MESSAGE value="game over screen added" />
     <MESSAGE value="score added" />
     <MESSAGE value="special question added" />
-    <option name="LAST_COMMIT_MESSAGE" value="special question added" />
+    <MESSAGE value="multiplayer changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="multiplayer changes" />
   </component>
 </project>

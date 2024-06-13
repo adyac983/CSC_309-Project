@@ -189,9 +189,10 @@ public class BuildingPanel extends JPanel implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         Player player = GameData.getInstance().getPlayer();
-        GameData.getInstance().getPlayer().moveTo(player.getX()+1, player.getY());
-        repaint();
-
+        if (player != null) {
+            GameData.getInstance().getPlayer().moveTo(player.getX()+1, player.getY());
+            repaint();
+        }
     }
     public static void stopTimer() {
         timer.stop();

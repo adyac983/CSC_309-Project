@@ -70,6 +70,12 @@ public class Feedback extends JPanel {
                 GameData.getInstance().setResult(0);
                 //add score
                 GameData.getInstance().setScore(GameData.getInstance().getScore()+1);
+                if (GameData.getInstance().getMultiplayer() == 1) {
+                    if (GameData.getInstance().getWhoIAm() == GameData.SERVER) {
+                        GameData.getInstance().setServerPlayerScore(GameData.getInstance().getServerPlayerScore()+1);
+                    } else
+                        GameData.getInstance().setClientPlayerScore(GameData.getInstance().getClientPlayerScore()+1);
+                }
                 GameData.getInstance().changeScoreLabelText();
                 //move player to next building if player isn't at the bottom already
                 if (GameData.getInstance().getPlayer().getY() != GameData.getInstance().getScrollPaneHeight()-100) {
@@ -82,7 +88,16 @@ public class Feedback extends JPanel {
             } else {
                 JOptionPane.showMessageDialog(this, "Incorrect! The correct answer is: " + Double.valueOf(Equations.getAnswer(currentEquation, levelChoice)));
                 GameData.getInstance().setResult(1);
-                GameData.getInstance().getPlayer().setHp(GameData.getInstance().getPlayer().getHp()-1);
+
+                if (GameData.getInstance().getMultiplayer() == 1) {
+                    if (GameData.getInstance().getWhoIAm() == GameData.SERVER)
+                        GameData.getInstance().setServerPlayerHp(GameData.getInstance().getServerPlayerHp() -1);
+                    else
+                        GameData.getInstance().setClientPlayerHp(GameData.getInstance().getClientPlayerHp() -1);
+                } else {
+                    GameData.getInstance().getPlayer().setHp(GameData.getInstance().getPlayer().getHp()-1);
+                }
+
                 GameData.getInstance().recalculate();
                 GameData.getInstance().getSp().getViewport().repaint();
             }

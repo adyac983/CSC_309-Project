@@ -171,5 +171,6 @@ class ChoicePanel extends JPanel {
         MultiplayerServer server = MultiplayerServer.getInstance();
         client.simulateGame();
         server.simulateGame();
+
     }
 }
