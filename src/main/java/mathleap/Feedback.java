@@ -17,7 +17,7 @@ public class Feedback extends JPanel {
         setLayout(new FlowLayout());
         this.levelChoice=level;
         Equations.setLevelChoice(level);
-        System.out.println(levelChoice);
+        //System.out.println(levelChoice);
         equationLabel = new JLabel("Equation: " + Equations.getEquation(currentEquation, levelChoice));
         add(equationLabel);
         JLabel answerTextLabel = new JLabel("Enter your answer:");
@@ -70,7 +70,7 @@ public class Feedback extends JPanel {
                 GameData.getInstance().setResult(0);
                 //add score
                 GameData.getInstance().setScore(GameData.getInstance().getScore()+1);
-                ChoicePanel.changeScoreLabelText();
+                GameData.getInstance().changeScoreLabelText();
                 //move player to next building if player isn't at the bottom already
                 if (GameData.getInstance().getPlayer().getY() != GameData.getInstance().getScrollPaneHeight()-100) {
                     GameData.getInstance().nextBuilding();

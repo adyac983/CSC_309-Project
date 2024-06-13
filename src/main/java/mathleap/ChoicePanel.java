@@ -20,6 +20,7 @@ class ChoicePanel extends JPanel {
     public ChoicePanel(String player) {
 
         this.playerchoice= player;
+        GameData.getInstance().setPlayerchoice(playerchoice);
         setLayout(new GridLayout(3, 1));
 
         JButton button1 = new JButton("Air Pollution");
@@ -58,7 +59,7 @@ class ChoicePanel extends JPanel {
     }
 
     private void handleButtonAction(int selectedSource) {
-        if (GameData.getInstance().getMultiplayer() == 1) {
+        if (GameData.getInstance().getMultiplayer() == 0) {
             if (selectedSource == 1) {
                 newGame("city");
             }
@@ -69,7 +70,7 @@ class ChoicePanel extends JPanel {
                 newGame("forest");
             }
         } else {
-            startMultiPlayer();
+            startMultiPlayer(selectedSource);
         }
     }
 
@@ -84,12 +85,13 @@ class ChoicePanel extends JPanel {
     public static List<DataRecord> getDataRecord() {
         return dr;
     }
+
     private void newGame(String theme) {
         dr = WebDataExtractor.extractWebTableData(choice);
         List<Building> buildings = BuildingParser.parseDataToBuildings(dr);
 
 
-        frame = new JFrame("Building Data");
+        frame = new JFrame("Math Leap");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 600);
 
@@ -124,7 +126,7 @@ class ChoicePanel extends JPanel {
         else if (playerchoice=="gojo"){
             player.setImage("gojo.png");
         }
-        GameData.getInstance().setSoloPlayer(player);
+        GameData.getInstance().setPlayer(player);
 
         frame.add(scrollPane, BorderLayout.CENTER);
 
@@ -146,42 +148,28 @@ class ChoicePanel extends JPanel {
         scoreLabel.setForeground(Color.RED);
         hpScorePanel.add(hpLabel);
         hpScorePanel.add(scoreLabel);
+        GameData.getInstance().setScoreLabel(scoreLabel);
+        GameData.getInstance().setHpLabel(hpLabel);
 
-        if (GameData.getInstance().getMultiplayer() == 0)
-            add(opponentScoreLabel);
+        if (GameData.getInstance().getMultiplayer() == 1)
+            hpScorePanel.add(opponentScoreLabel);
 
         frame.add(hpScorePanel, BorderLayout.NORTH);
         frame.setVisible(true);
 
-        changeHpLabelText();
-        changeScoreLabelText();
+        GameData.getInstance().changeHpLabelText();
+        GameData.getInstance().changeScoreLabelText();
     }
-    private void startMultiPlayer() {
-        GameData.getInstance().reset();
-
+    private void startMultiPlayer(int selectedSource) {
         dr = WebDataExtractor.extractWebTableData(choice);
         List<Building> buildings = BuildingParser.parseDataToBuildings(dr);
         GameData.getInstance().setBuildings(buildings);
-        Building firstBuilding = GameData.getInstance().getCurrBuilding();
-        Player player1 = new Player(firstBuilding.getX(), 600-(int)firstBuilding.getLength()-100);
-        Player player2 = new Player(firstBuilding.getX(), 600-(int)firstBuilding.getLength()-100);
-        GameData.getInstance().setServerPlayer(player1);
-        GameData.getInstance().setClientPlayer(player2);
-        //MultiplayerClient client = new MultiplayerClient();
-        MultiplayerServer server = new MultiplayerServer();
-        //client.simulateGame();
+
+        GameData.getInstance().reset();
+
+        MultiplayerClient client = new MultiplayerClient();
+        MultiplayerServer server = MultiplayerServer.getInstance();
+        client.simulateGame();
         server.simulateGame();
-
-    }
-
-    public static void changeHpLabelText() {
-        if (GameData.getInstance().getCurrentPlayer() != null) {
-            hpLabel.setText("HP: " + GameData.getInstance().getCurrentPlayer().getHp());
-        }
-    }
-
-    // Method to update Score label text
-    public static void changeScoreLabelText() {
-        scoreLabel.setText("Score: " + GameData.getInstance().getScore());
     }
 }

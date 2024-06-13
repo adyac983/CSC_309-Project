@@ -105,7 +105,7 @@ public class BuildingPanel extends JPanel implements ActionListener{
         }
 
         // Draw the player
-        Player player = GameData.getInstance().getCurrentPlayer();
+        Player player = GameData.getInstance().getPlayer();
         player.draw(g);
 
         // Draw buildings
@@ -188,8 +188,8 @@ public class BuildingPanel extends JPanel implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Player player = GameData.getInstance().getCurrentPlayer();
-        GameData.getInstance().getCurrentPlayer().moveTo(player.getX()+1, player.getY());
+        Player player = GameData.getInstance().getPlayer();
+        GameData.getInstance().getPlayer().moveTo(player.getX()+1, player.getY());
         repaint();
 
     }

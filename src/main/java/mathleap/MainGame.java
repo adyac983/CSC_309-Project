@@ -9,7 +9,7 @@ public class MainGame {
         if (GraphicsEnvironment.isHeadless()) {
             System.out.println("Running in headless mode!");
         }
-        JFrame frame = new JFrame("Building Data");
+        JFrame frame = new JFrame("Math Leap Menu");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600, 450);
 

@@ -11,6 +11,7 @@ public class Player {
     private int y;
     private Image image;
     private int hp;
+    private int score;
 
     public Player(int x, int y) {
         this.x = x;
@@ -74,5 +75,13 @@ public class Player {
 
     public void setHp(int hp) {
         this.hp = hp;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
     }
 }

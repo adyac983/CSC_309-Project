@@ -8,7 +8,6 @@ import java.util.List;
 public class GameData extends PropertyChangeSupport {
     private static GameData instance;
     private List<Building> buildings;
-    private Player soloplayer;
     private int currBuilding = 0;
     private int numBuildings = 0;
     private JScrollPane sp = null;
@@ -16,15 +15,13 @@ public class GameData extends PropertyChangeSupport {
     private HomeScreen homeScreen;
     private JFrame frame;
     private int score = 0;
-    private Player currentPlayer = null;
+    private Player player = null;
 
     // Multiplayer
     private int multiplayer = 1;
     private int whoIAm = 0;
     private int serverPlayerScore;
     private int clientPlayerScore;
-    private Player serverPlayer;
-    private Player clientPlayer;
     public static final int SERVER = 0;
     public static final int CLIENT = 1;
 
@@ -33,6 +30,12 @@ public class GameData extends PropertyChangeSupport {
     private Point startPosition;
     private int scrollDuration = 500; // Duration of the scroll in milliseconds
     private long startTime;
+    private String playerchoice;
+    private int levelChoice;
+    private JLabel hpLabel;
+    private JLabel scoreLabel;
+
+    private JLabel opponentScoreLabel;
 
     private GameData() {
         super(new Object());
@@ -46,19 +49,10 @@ public class GameData extends PropertyChangeSupport {
         this.homeScreen = s;
     }
 
-    public void setSoloPlayer(Player player) {
-        this.soloplayer = player;
+    public void setPlayer(Player player) {
+        this.player = player;
     }
-
-    public Player getCurrentPlayer() {
-        Player player;
-        if (multiplayer == 1)
-            player = soloplayer;
-        else if (whoIAm == GameData.CLIENT)
-            player = clientPlayer;
-        else
-            player = serverPlayer;
-        this.currentPlayer = player;
+    public Player getPlayer() {
         return player;
     }
 
@@ -82,18 +76,14 @@ public class GameData extends PropertyChangeSupport {
         return instance;
     }
 
-    public Player getPlayer() {
-        return currentPlayer;
-    }
+
 
     public int getScrollPaneHeight() {
         return sp.getViewport().getHeight();
     }
 
     public void recalculate() {
-        Player player = getCurrentPlayer();
-
-        if (multiplayer == 1 && player.getHp() <= 0) {
+        if (player.getHp() <= 0) {
             Gameover();
         }
 
@@ -110,12 +100,12 @@ public class GameData extends PropertyChangeSupport {
 
         // Update UI and check player position
         if (player != null) {
-            ChoicePanel.changeHpLabelText();
+            GameData.getInstance().changeHpLabelText();
             Building curr = getCurrBuilding();
             if (curr.getX() + 150 < player.getX() + 20) { // player took too long to answer
                 result = 1;
                 player.setHp(player.getHp() - 1);
-                ChoicePanel.changeHpLabelText();
+                GameData.getInstance().changeHpLabelText();
             }
 
             if (result == 0) { // default or player answered correctly
@@ -202,6 +192,8 @@ public class GameData extends PropertyChangeSupport {
         this.score = 0;
         this.currBuilding = 0;
         this.result = 0;
+        this.serverPlayerScore = 0;
+        this.clientPlayerScore = 0;
     }
 
     public void setClientPlayerScore(int s) {
@@ -224,14 +216,6 @@ public class GameData extends PropertyChangeSupport {
         return this.multiplayer;
     }
 
-    public void setServerPlayer(Player p) {
-        this.serverPlayer = p;
-    }
-
-    public void setClientPlayer(Player p) {
-        this.clientPlayer = p;
-    }
-
     public int getServerPlayerScore() {
         return serverPlayerScore;
     }
@@ -242,5 +226,53 @@ public class GameData extends PropertyChangeSupport {
 
     public int getWhoIAm() {
         return whoIAm;
+    }
+    public String getPlayerchoice() {
+        return playerchoice;
+    }
+
+    public void setPlayerchoice(String playerchoice) {
+        this.playerchoice = playerchoice;
+    }
+
+    public int getLevelChoice() {
+        return levelChoice;
+    }
+
+    public void setLevelChoice(int levelChoice) {
+        this.levelChoice = levelChoice;
+    }
+    public void changeHpLabelText() {
+        if (GameData.getInstance().getPlayer() != null) {
+            hpLabel.setText("HP: " + GameData.getInstance().getPlayer().getHp());
+        }
+    }
+
+    // Method to update Score label text
+    public void changeScoreLabelText() {
+        if (multiplayer == 0) {
+            scoreLabel.setText("Score: " + GameData.getInstance().getScore());
+        }
+        else {
+            if (GameData.getInstance().getWhoIAm() == GameData.SERVER) {
+                scoreLabel.setText("Score: " + GameData.getInstance().getServerPlayerScore());
+                opponentScoreLabel.setText("Opponent Score: " + GameData.getInstance().getClientPlayerScore());
+            } else {
+                scoreLabel.setText("Score: " + GameData.getInstance().getClientPlayerScore());
+                opponentScoreLabel.setText("Opponent Score: " + GameData.getInstance().getServerPlayerScore());
+            }
+        }
+    }
+
+    public void setHpLabel(JLabel hpLabel) {
+        this.hpLabel = hpLabel;
+    }
+
+    public void setScoreLabel(JLabel scoreLabel) {
+        this.scoreLabel = scoreLabel;
+    }
+
+    public void setOpponentScoreLabel(JLabel opponentScoreLabel) {
+        this.opponentScoreLabel = opponentScoreLabel;
     }
 }

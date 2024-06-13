@@ -13,11 +13,14 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 # Set environment variables for VNC
 ENV USER root
-ENV PASSWORD password = root
+ENV VNC_PASSWORD = "a12134111111111111"
+
 # Create a VNC startup script
 RUN mkdir ~/.vnc
 RUN echo -e "#!/bin/sh\nxrdb $HOME/.Xresources\nstartxfce4 &" > ~/.vnc/xstartup
 RUN chmod +x ~/.vnc/xstartup
+RUN echo $VNC_PASSWORD | vncpasswd -f > /root/.vnc/passwd
+
 # Expose the VNC port
 EXPOSE 5901
 # Add application JAR file

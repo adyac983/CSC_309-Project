@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class HomeScreen extends JPanel {
-    private final CardLayout cardLayout;
+    private CardLayout cardLayout;
     private final JPanel mainPanel;
     private JPanel gameOverPanel;
 
@@ -21,13 +21,13 @@ public class HomeScreen extends JPanel {
         JButton playSingleButton = new JButton("Play Solo");
         playSingleButton.addActionListener(e -> {
             cardLayout.show(mainPanel, "playerPanel");
-            GameData.getInstance().setMultiplayer(1);
+            GameData.getInstance().setMultiplayer(0);
         });
         homePanel.add(playSingleButton);
         JButton playMultiButton = new JButton("Play Multiplayer");
         playMultiButton.addActionListener(e -> {
             cardLayout.show(mainPanel, "playerPanel");
-            GameData.getInstance().setMultiplayer(0);
+            GameData.getInstance().setMultiplayer(1);
         });
         homePanel.add(playMultiButton);
 
@@ -57,16 +57,19 @@ public class HomeScreen extends JPanel {
         JButton level3Button = new JButton("Level 3");
         level1Button.addActionListener(e -> {
             choicePanel.setLevelChoice(1);
+            GameData.getInstance().setLevelChoice(1);
             GameData.getInstance().reset();
             cardLayout.show(mainPanel, "themePanel");
         });
         level2Button.addActionListener(e -> {
             choicePanel.setLevelChoice(2);
+            GameData.getInstance().setLevelChoice(2);
             GameData.getInstance().reset();
             cardLayout.show(mainPanel, "themePanel");
         });
         level3Button.addActionListener(e -> {
             choicePanel.setLevelChoice(3);
+            GameData.getInstance().setLevelChoice(3);
             GameData.getInstance().reset();
             cardLayout.show(mainPanel, "themePanel");
         });
@@ -93,5 +96,8 @@ public class HomeScreen extends JPanel {
 
     public void GameOver() {
         cardLayout.show(mainPanel, "gameOverPanel");
+    }
+    public void changeCard(String theme) {
+        cardLayout.show(mainPanel, theme);
     }
 }
