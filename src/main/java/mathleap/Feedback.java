@@ -12,6 +12,7 @@ public class Feedback extends JPanel {
     private int hintStep = 1;
     private int levelChoice;
     private Boolean correct = false;
+    private int c = 0;
 
     public Feedback(int level) {
         setLayout(new FlowLayout());
@@ -36,6 +37,15 @@ public class Feedback extends JPanel {
             }
         });
         add(submitButton);
+        JButton hintButton = new JButton("Hint");
+        hintButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showHint();
+            }
+        });
+            add(hintButton);
+
     }
     private void showSolutions(){
         String s = Solution.getSolution(Equations.getEquation(currentEquation, levelChoice));
@@ -70,12 +80,6 @@ public class Feedback extends JPanel {
                 GameData.getInstance().setResult(0);
                 //add score
                 GameData.getInstance().setScore(GameData.getInstance().getScore()+1);
-                if (GameData.getInstance().getMultiplayer() == 1) {
-                    if (GameData.getInstance().getWhoIAm() == GameData.SERVER) {
-                        GameData.getInstance().setServerPlayerScore(GameData.getInstance().getServerPlayerScore()+1);
-                    } else
-                        GameData.getInstance().setClientPlayerScore(GameData.getInstance().getClientPlayerScore()+1);
-                }
                 GameData.getInstance().changeScoreLabelText();
                 //move player to next building if player isn't at the bottom already
                 if (GameData.getInstance().getPlayer().getY() != GameData.getInstance().getScrollPaneHeight()-100) {
@@ -88,29 +92,9 @@ public class Feedback extends JPanel {
             } else {
                 JOptionPane.showMessageDialog(this, "Incorrect! The correct answer is: " + Double.valueOf(Equations.getAnswer(currentEquation, levelChoice)));
                 GameData.getInstance().setResult(1);
-
-                if (GameData.getInstance().getMultiplayer() == 1) {
-                    if (GameData.getInstance().getWhoIAm() == GameData.SERVER)
-                        GameData.getInstance().setServerPlayerHp(GameData.getInstance().getServerPlayerHp() -1);
-                    else
-                        GameData.getInstance().setClientPlayerHp(GameData.getInstance().getClientPlayerHp() -1);
-                } else {
-                    GameData.getInstance().getPlayer().setHp(GameData.getInstance().getPlayer().getHp()-1);
-                }
-
+                GameData.getInstance().getPlayer().setHp(GameData.getInstance().getPlayer().getHp()-1);
                 GameData.getInstance().recalculate();
                 GameData.getInstance().getSp().getViewport().repaint();
-            }
-            JButton hintButton = new JButton("Hint");
-            hintButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    showHint();
-                }
-            });
-            //hints feature is only available after you're score is greater than 7
-            if ( GameData.getInstance().getScore() > 7){
-                add(hintButton);
             }
             JButton solButton = new JButton("Solution");
             solButton.addActionListener(new ActionListener() {
@@ -120,8 +104,9 @@ public class Feedback extends JPanel {
                 }
             });
             //solution button is only accessible if score is more than 5 and health is less than 2
-            if (GameData.getInstance().getPlayer().getHp() < 2){
+            if (GameData.getInstance().getPlayer().getHp() < 2 && c == 0){
                 add(solButton);
+                c++;
             }
             currentEquation++;
             hintStep = 1;
